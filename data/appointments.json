@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Parth",
+    "phone": "1234567890",
+    "email": "",
+    "treatment": "General Check-up & Cleaning",
+    "date": "1111-11-11",
+    "time": "3:00 PM",
+    "message": "",
+    "createdAt": "2026-06-02T05:36:20.997Z"
+  },
+  {
+    "name": "Priya Sharma",
+    "phone": "9995428965",
+    "email": "",
+    "treatment": "General Check-up & Cleaning",
+    "date": "2026-06-07",
+    "time": "9:00 AM",
+    "message": "Yearly Checkup ",
+    "createdAt": "2026-06-05T08:39:52.975Z"
+  }
+]

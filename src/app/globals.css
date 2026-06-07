@@ -1,0 +1,319 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Design Tokens ────────────────────────────────────────────── */
+:root {
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+
+  /* Spacing rhythm */
+  --section-py: 6rem;
+  --section-px: 5%;
+  --container-max: 1200px;
+
+  /* Transitions */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Shadows */
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+  --shadow-card-hover: 0 8px 40px rgba(15,45,94,0.12);
+  --shadow-dental: 0 8px 40px rgba(15,45,94,0.15);
+}
+
+/* ── Base Reset ───────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { overflow-x: hidden; }
+img { max-width: 100%; height: auto; }
+
+/* ── Typography Scale ─────────────────────────────────────────── */
+@layer base {
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 300;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+  }
+  p { line-height: 1.7; }
+  a { color: inherit; }
+}
+
+/* ── Utility Classes ──────────────────────────────────────────── */
+@layer utilities {
+  .container-dental {
+    max-width: var(--container-max);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--section-px);
+    padding-right: var(--section-px);
+  }
+
+  .section-py { padding-top: var(--section-py); padding-bottom: var(--section-py); }
+
+  .journey-glow-sweep {
+    background: linear-gradient(90deg, transparent 0%, rgba(79, 250, 205, 0.85) 35%, rgba(255, 255, 255, 0.75) 50%, rgba(79, 250, 205, 0.85) 65%, transparent 100%);
+    animation: journey-glow-sweep 3.2s ease-in-out infinite;
+    will-change: transform, opacity;
+  }
+
+  .journey-step-circle {
+    position: relative;
+  }
+
+  .journey-step-circle::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background: radial-gradient(circle at center, rgba(79, 250, 205, 0.32), transparent 55%);
+    filter: blur(10px);
+    opacity: 0.45;
+    animation: journey-step-pulse 3.8s ease-in-out infinite;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .journey-step-circle:hover::before {
+    opacity: 0.65;
+  }
+
+  /* Display typography */
+  .text-display {
+    font-family: var(--font-display);
+    font-weight: 300;
+    letter-spacing: -0.03em;
+  }
+  .text-display em {
+    font-style: italic;
+    color: theme("colors.dental.navy.500");
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, theme("colors.dental.navy.700"), theme("colors.dental.mint.DEFAULT"));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glass morphism */
+  .glass {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  /* Card base */
+  .card-base {
+    background: #ffffff;
+    border: 1px solid theme("colors.dental.slate.100");
+    border-radius: theme("borderRadius.2xl");
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s var(--ease-out-expo);
+  }
+  .card-base:hover {
+    box-shadow: var(--shadow-card-hover);
+    border-color: theme("colors.dental.navy.100");
+    transform: translateY(-3px);
+  }
+
+  /* Section tag */
+  .section-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: theme("colors.dental.navy.500");
+    margin-bottom: 0.75rem;
+  }
+
+  /* Scrollbar */
+  .scrollbar-thin::-webkit-scrollbar { width: 4px; height: 4px; }
+  .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+  .scrollbar-thin::-webkit-scrollbar-thumb { background: theme("colors.dental.slate.200"); border-radius: 9999px; }
+}
+
+/* ── Component Styles ─────────────────────────────────────────── */
+@layer components {
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: var(--font-body);
+    font-weight: 500;
+    border-radius: 0.75rem;
+    transition: all 0.2s var(--ease-out-expo);
+    cursor: pointer;
+    white-space: nowrap;
+    text-decoration: none;
+    border: none;
+    outline: none;
+  }
+  .btn:focus-visible { outline: 2px solid theme("colors.dental.mint.DEFAULT"); outline-offset: 2px; }
+  .btn-sm  { font-size: 0.8125rem; padding: 0.5rem 1.125rem; }
+  .btn-md  { font-size: 0.9375rem; padding: 0.75rem 1.75rem; }
+  .btn-lg  { font-size: 1rem; padding: 0.9375rem 2.25rem; }
+
+  .btn-primary {
+    background: theme("colors.dental.navy.700");
+    color: #ffffff;
+  }
+  .btn-primary:hover {
+    background: theme("colors.dental.navy.800");
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(15, 45, 94, 0.28);
+  }
+  .btn-primary:active { transform: translateY(0); }
+
+  .btn-mint {
+    background: theme("colors.dental.mint.DEFAULT");
+    color: #ffffff;
+  }
+  .btn-mint:hover {
+    background: theme("colors.dental.mint.600");
+    transform: translateY(-2px);
+    box-shadow: theme("boxShadow.mint");
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: theme("colors.dental.navy.700");
+    border: 1.5px solid theme("colors.dental.navy.100");
+  }
+  .btn-ghost:hover {
+    background: theme("colors.dental.navy.50");
+    border-color: theme("colors.dental.navy.300");
+  }
+
+  .btn-emergency {
+    background: #FFF5F5;
+    color: #DC2626;
+    border: 1.5px solid #FCA5A5;
+  }
+  .btn-emergency:hover { background: #FEE2E2; transform: translateY(-1px); }
+
+  /* Form elements */
+  .form-field {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.09);
+    border: 1.5px solid rgba(255, 255, 255, 0.18);
+    border-radius: 0.75rem;
+    padding: 0.875rem 1.125rem;
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    color: #ffffff;
+    transition: all 0.2s;
+    outline: none;
+    -webkit-appearance: none;
+  }
+  .form-field::placeholder { color: rgba(255, 255, 255, 0.38); }
+  .form-field:focus {
+    border-color: theme("colors.dental.mint.DEFAULT");
+    background: rgba(255, 255, 255, 0.13);
+    box-shadow: 0 0 0 3px rgba(43, 197, 160, 0.15);
+  }
+  .form-field option { background: theme("colors.dental.navy.700"); color: #ffffff; }
+
+  /* Star rating */
+  .stars { color: theme("colors.dental.gold.DEFAULT"); letter-spacing: 1px; }
+
+  /* Badge pill */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    background: theme("colors.dental.navy.50");
+    border: 1px solid theme("colors.dental.navy.100");
+    border-radius: 9999px;
+    padding: 0.375rem 1rem 0.375rem 0.625rem;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: theme("colors.dental.navy.700");
+  }
+
+  /* Divider */
+  .divider-dental {
+    width: 48px;
+    height: 3px;
+    background: linear-gradient(90deg, theme("colors.dental.mint.DEFAULT"), theme("colors.dental.navy.500"));
+    border-radius: 9999px;
+    margin: 1.25rem 0 1.75rem;
+  }
+}
+
+/* ── Animation Keyframes ──────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+@keyframes float-reverse {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(10px); }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(43, 197, 160, 0.4); }
+  50%       { box-shadow: 0 0 0 12px rgba(43, 197, 160, 0); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes journey-glow-sweep {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+@keyframes journey-step-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.45;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.1;
+  }
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Scroll animations via Framer Motion (fallback) ───────────── */
+.motion-safe\:animate-float { animation: float 6s ease-in-out infinite; }
+
+/* ── Focus ring ──────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid theme("colors.dental.mint.DEFAULT");
+  outline-offset: 3px;
+}
+
+/* ── Selection color ─────────────────────────────────────────── */
+::selection {
+  background: rgba(43, 197, 160, 0.25);
+  color: theme("colors.dental.navy.900");
+}
+
+/* ── Custom scrollbar (desktop) ──────────────────────────────── */
+@media (min-width: 768px) {
+  ::-webkit-scrollbar       { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: theme("colors.dental.slate.200"); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: theme("colors.dental.slate.300"); }
+}
