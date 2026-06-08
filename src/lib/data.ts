@@ -6,7 +6,7 @@ import type {
 
 // ─── CLINIC CONFIG ──────────────────────────────────────────────
 export const CLINIC_CONFIG: ClinicConfig = {
-  name: "Dr. Pooja Bala",
+  name: "Dr. Pooja Bala's Clinic",
   tagline: "Creating Healthy & Beautiful Smiles for Life",
   doctor: {
     name: "Dr. Pooja Bala",
@@ -85,7 +85,6 @@ export const TRUST_BADGES: TrustBadge[] = [
   { id: "ida",    icon: "", label: "Indian Endodontist Member " },
   { id: "award",  icon: "", label: "Best Dental Clinic 2024" },
   { id: "aacd",   icon: "", label: "AACD Accredited" },
-  { id: "insurance", icon: "", label: "All Insurance Accepted" },
   { id: "nabh",   icon: "", label: "NABH Accredited Clinic" },
   { id: "icoi",   icon: "", label: "ICOI Fellow" },
 ];
@@ -221,7 +220,7 @@ export const WHY_CHOOSE: WhyChooseItem[] = [
   { id: "painless",  number: "02", icon: "💊", title: "Pain-Free Guarantee",    description: "STA Wand computer-controlled anaesthesia, nitrous oxide sedation, and a gentle team. We promise comfort — or we make it right." },
   { id: "team",      number: "03", icon: "👩‍⚕️", title: "Multi-Specialty Team", description: "Implantologist, prosthodontist, orthodontist, pedodontist, and endodontist — all under one roof. No referrals, no delays." },
   { id: "pricing",   number: "04", icon: "💰", title: "Transparent Pricing",   description: "Detailed itemised estimates before we begin. No hidden fees, no upselling. Third-party financing available at 0% EMI." },
-  { id: "schedule",  number: "05", icon: "📅", title: "Flexible Scheduling",   description: "Book online 24/7. Early mornings from 8 AM, evenings until 7 PM, Saturday 9–5, and emergency slots always reserved." },
+  { id: "schedule",  number: "05", icon: "📅", title: "Flexible Scheduling",   description: "Book online 24/7. Early mornings from 10:15 AM, evenings until 8 PM, and emergency slots always reserved." },
   { id: "sterilisation", number: "06", icon: "🏥", title: "Hospital-Grade Sterilisation", description: "Class B autoclave, single-use disposables, and real-time sterilisation monitoring. NABH-compliant infection control protocols." },
 ];
 
@@ -238,7 +237,7 @@ export const JOURNEY_STEPS: JourneyStep[] = [
 
 // ─── TESTIMONIALS ────────────────────────────────────────────────
 export const TESTIMONIALS: Testimonial[] = [
-  { id: "t1", name: "Priya Raghunathan", initials: "PR", rating: 5, review: "I was terrified of the dentist for over a decade. Dr. Mehta and his team made me feel completely at ease. My smile makeover with 6 e.max veneers transformed not just my teeth but my entire confidence. I cry happy tears every time I see my smile in the mirror.", treatment: "Smile Makeover — 6 E.max Veneers", date: "April 2025", verified: true, source: "google", avatarBg: "from-violet-200 to-purple-300" },
+  { id: "t1", name: "Priya Raghunathan", initials: "PR", rating: 5, review: "I was terrified of the dentist for over a decade. Dr. Pooja Bala and her team made me feel completely at ease. My smile makeover with 6 e.max veneers transformed not just my teeth but my entire confidence. I cry happy tears every time I see my smile in the mirror.", treatment: "Smile Makeover — 6 E.max Veneers", date: "April 2025", verified: true, source: "google", avatarBg: "from-violet-200 to-purple-300" },
   { id: "t2", name: "Arjun Khanna", initials: "AK", rating: 5, review: "Emergency root canal after hours on a Saturday. They had me seen within 45 minutes of my call. Absolutely zero pain during the procedure. I was back at work the next morning. The STA wand anaesthesia delivery was something else — I barely felt a thing.", treatment: "Emergency Root Canal + Crown", date: "March 2025", verified: true, source: "google", avatarBg: "from-blue-200 to-blue-300" },
   { id: "t3", name: "Sneha Mahajan", initials: "SM", rating: 5, review: "My Invisalign journey was smoother than I imagined. The ClinCheck 3D simulation showed me exactly what my smile would look like month by month — I was hooked immediately. 11 months later, my teeth are perfectly straight. Worth every rupee.", treatment: "Invisalign — 28 Aligners, 11 months", date: "February 2025", verified: true, source: "google", avatarBg: "from-teal-200 to-cyan-300" },
   { id: "t4", name: "Rahul Deshmukh", initials: "RD", rating: 5, review: "Three implants done with CT-guided precision. No guesswork, no surprises. The CEREC crown fitting was done the same day. I was eating normally within 48 hours. The team is incredibly professional and made the entire multi-month process feel seamless.", treatment: "3 Nobel Biocare Implants + CEREC Crowns", date: "January 2025", verified: true, source: "google", avatarBg: "from-amber-200 to-orange-300" },

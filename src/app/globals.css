@@ -120,6 +120,19 @@ img { max-width: 100%; height: auto; }
     transform: translateY(-3px);
   }
 
+  .testimonial-scroll {
+    animation: scroll-left 26s linear infinite;
+  }
+
+  .testimonial-scroll:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes scroll-left {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+  }
+
   /* Section tag */
   .section-tag {
     display: inline-block;

@@ -35,7 +35,7 @@ function TestimonialCard({ t, index }: { t: Testimonial; index: number }) {
       initial={{ opacity: 0, y: 24 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ delay: (index % 3) * 0.09, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="card-base p-6 flex flex-col gap-4"
+      className="card-base p-5 flex flex-col gap-4"
     >
       {/* Stars + source */}
       <div className="flex items-center justify-between">
@@ -57,7 +57,7 @@ function TestimonialCard({ t, index }: { t: Testimonial; index: number }) {
       </div>
 
       {/* Review text */}
-      <blockquote className="font-display text-[1rem] font-light italic leading-relaxed text-dental-slate-700 flex-1">
+      <blockquote className="font-display text-[1rem] font-light italic leading-relaxed text-dental-slate-700">
         "{t.review}"
       </blockquote>
 
@@ -108,20 +108,15 @@ export function TestimonialsSection() {
         </div>
 
         <div className="relative overflow-hidden">
-          <motion.div
-            className="flex gap-4 xl:gap-5 py-4"
-            animate={{ x: ["-50%", "0%", "-50%"] }}
-            transition={{ duration: 26, ease: "linear", repeat: Infinity }}
-            whileHover={{ x: "0%" }}
-          >
+          <div className="flex gap-4 xl:gap-5 py-4 testimonial-scroll">
             {Array.from({ length: 2 }).flatMap((_, groupIndex) =>
-              TESTIMONIALS.slice(0, 3).map((t, i) => (
-                <div key={`${t.id}-${groupIndex}`} className="min-w-[320px] max-w-[360px] flex-shrink-0">
+              TESTIMONIALS.map((t, i) => (
+                <div key={`${t.id}-${groupIndex}`} className="w-[320px] flex-shrink-0">
                   <TestimonialCard t={t} index={i} />
                 </div>
               ))
             )}
-          </motion.div>
+          </div>
         </div>
 
         <RevealDiv delay={0.25} className="text-center mt-8">
