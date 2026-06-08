@@ -44,9 +44,7 @@ export default async function ServicePage({ params }: Props) {
               <a href="/services" className="text-dental-mint text-xs font-semibold hover:underline mb-4 inline-block">
                 ← All Services
               </a>
-              {service.icon && (
-                <div className="text-5xl mb-4">{service.icon}</div>
-              )}
+              {/* icon removed from hero per request */}
               <h1 className="font-display text-display-lg text-white mb-3">
                 {service.name}
               </h1>
@@ -76,7 +74,7 @@ export default async function ServicePage({ params }: Props) {
                     What to Expect
                   </h2>
                   <p className="text-dental-slate-600 leading-relaxed text-base">
-                    At PureSmile Dental, every {service.name.toLowerCase()} procedure is performed
+                    At Dr. Pooja Bala's Dental Clinic , every {service.name.toLowerCase()} procedure is performed
                     with precision, care, and the most advanced technology available. {service.description}
                   </p>
                 </div>
@@ -103,7 +101,7 @@ export default async function ServicePage({ params }: Props) {
                     <span className="text-xs text-dental-slate-400">· 1,247 Google Reviews</span>
                   </div>
                   <blockquote className="font-display text-base italic text-dental-slate-600 leading-relaxed">
-                    "The team at PureSmile made my {service.name.toLowerCase()} experience completely pain-free and
+                    "The team at Dr. Pooja Bala's Clinic made my {service.name.toLowerCase()} experience completely pain-free and
                     the results exceeded every expectation. I cannot recommend them highly enough."
                   </blockquote>
                   <div className="mt-3 text-xs text-dental-slate-400">— Verified patient · {service.name}</div>

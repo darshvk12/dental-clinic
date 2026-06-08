@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "@/hooks";
 import { TRUST_BADGES, CLINIC_CONFIG, SERVICES, BEFORE_AFTER } from "@/lib/data";
@@ -6,9 +7,9 @@ import { ArrowRight, GraduationCap, Globe2, Award, CheckCircle2 } from "lucide-r
 import type { Service, BeforeAfterCase } from "@/types";
 
 /* ── Shared animation helpers ──────────────────────────────────── */
-function useReveal() {
-  const { ref, inView } = useInView();
-  return { ref: ref as React.RefObject<HTMLDivElement>, inView };
+function useReveal<T extends HTMLElement = HTMLDivElement>() {
+  const { ref, inView } = useInView<T>();
+  return { ref, inView };
 }
 
 function RevealDiv({ children, delay = 0, className = "" }: {
@@ -142,14 +143,19 @@ export function AboutSection() {
 /* SERVICE CARD                                                   */
 /* ══════════════════════════════════════════════════════════════ */
 function ServiceCard({ service, index }: { service: Service; index: number }) {
-  const { ref, inView } = useReveal();
+  const { ref, inView } = useReveal<HTMLAnchorElement>();
+  const imageSrc = "/images/teethcleaningservices.jpg";
+  const href = service.isEmergency ? `tel:${CLINIC_CONFIG.contact.emergencyPhone}` : "#appointment";
+
   return (
-    <motion.article
+    <motion.a
       ref={ref}
+      href={href}
       initial={{ opacity: 0, y: 24 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.55, delay: (index % 3) * 0.08, ease: [0.16, 1, 0.3, 1] }}
-      className={`group relative card-base p-6 flex flex-col ${service.isEmergency ? "bg-dental-navy-900 border-dental-navy-800" : ""}`}
+      className={`group relative card-base p-6 flex flex-col overflow-hidden transition-all duration-300 ${service.isEmergency ? "bg-dental-navy-900 border-dental-navy-800" : "hover:-translate-y-0.5 hover:shadow-card-hover"}`}
+      aria-label={service.isEmergency ? `Call emergency line for ${service.name}` : `Book ${service.name} treatment`}
     >
       {service.isFeatured && !service.isEmergency && (
         <div className="absolute top-4 right-4 bg-dental-mint/10 text-dental-mint-600 text-[0.65rem] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border border-dental-mint/20">
@@ -157,15 +163,25 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
         </div>
       )}
 
+      <div className="relative overflow-hidden -mx-6 -mt-6 mb-4 h-56">
+        <Image
+          src={imageSrc}
+          alt={service.name}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 33vw"
+        />
+      </div>
+
       {/* Name */}
       <h3 className={`text-base font-semibold mb-2 ${service.isEmergency ? "text-white" : "text-dental-slate-900"}`}>
         {service.name}
       </h3>
 
       {/* Short desc */}
-      {service.description && (
+      {service.shortDesc && (
         <p className={`text-sm leading-relaxed mb-3 ${service.isEmergency ? "text-white/60" : "text-dental-slate-500"}`}>
-          {service.description}
+          {service.shortDesc}
         </p>
       )}
 
@@ -191,16 +207,11 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
       )}
 
       {/* CTA */}
-      <a
-        href={service.isEmergency ? `tel:${CLINIC_CONFIG.contact.emergencyPhone}` : "#appointment"}
-        className={`inline-flex items-center gap-1.5 text-xs font-semibold transition-colors
-          ${service.isEmergency ? "text-dental-mint hover:text-dental-mint-300" : "text-dental-navy-600 hover:text-dental-navy-800"}`}
-        aria-label={`Learn more about ${service.name}`}
-      >
+      <span className={`btn ${service.isEmergency ? "btn-ghost text-white border-white/30" : "btn-primary"} btn-sm gap-2 w-full justify-center mt-auto`}>
         {service.isEmergency ? "Call Emergency Line" : "Book This Treatment"}
         <ArrowRight size={13} />
-      </a>
-    </motion.article>
+      </span>
+    </motion.a>
   );
 }
 

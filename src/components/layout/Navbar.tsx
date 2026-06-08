@@ -7,11 +7,12 @@ import { cn, sanitizePhone } from "@/lib/utils";
 import { CLINIC_CONFIG } from "@/lib/data";
 
 const NAV_LINKS = [
-  { label: "About",       href: "#about" },
-  { label: "Services",    href: "#services" },
-  { label: "Smile Gallery", href: "#gallery" },
-  { label: "Reviews",     href: "#testimonials" },
-  { label: "Contact",     href: "#contact" },
+  { label: "About",       href: "/#about" },
+  { label: "Services",    href: "/#services" },
+  { label: "Smile Gallery", href: "/#gallery" },
+  { label: "Reviews",     href: "/#testimonials" },
+  { label: "Blog",        href: "/#blog" },
+  { label: "Contact",     href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -79,7 +80,7 @@ export default function Navbar() {
                 <span className="hidden lg:inline">{CLINIC_CONFIG.contact.phone}</span>
                 <span className="lg:hidden">Call</span>
               </a>
-              <a href="#appointment" className="btn btn-primary btn-sm gap-1.5">
+              <a href="/#appointment" className="btn btn-primary btn-sm gap-1.5">
                 <Calendar size={14} strokeWidth={2.5} />
                 Book Appointment
               </a>
@@ -130,7 +131,7 @@ export default function Navbar() {
 
               <div className="mt-8 flex flex-col gap-3">
                 <a
-                  href="#appointment"
+                  href="/#appointment"
                   onClick={() => setMobile(false)}
                   className="btn btn-primary btn-lg w-full justify-center"
                 >

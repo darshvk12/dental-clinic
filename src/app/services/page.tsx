@@ -34,20 +34,21 @@ export default function ServicesPage() {
         <section className="py-16 bg-dental-slate-50">
           <div className="container-dental">
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {SERVICES.map((service) => (
-                <a
-                  key={service.id}
-                  href={service.href}
-                  className={`group block rounded-2xl p-6 border transition-all duration-300 hover:-translate-y-1 hover:shadow-dental
-                    ${service.isEmergency
+              {SERVICES.map((service) => {
+                const CardTag = service.href ? "a" : "div";
+                const interactive = Boolean(service.href);
+                return (
+                  <CardTag
+                    key={service.id}
+                    {...(interactive ? { href: service.href } : {})}
+                    className={`group block rounded-2xl p-6 border transition-all duration-300 ${
+                      interactive ? "hover:-translate-y-1 hover:shadow-dental" : ""
+                    } ${service.isEmergency
                       ? "bg-dental-navy-900 border-dental-navy-700 hover:border-dental-navy-600"
                       : "bg-white border-dental-slate-100 hover:border-dental-navy-200 hover:shadow-card-hover"
                     }`}
-                >
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-xl mb-4
-                    ${service.isEmergency ? "bg-white/10" : "bg-dental-navy-50 group-hover:bg-dental-navy-100"} transition-colors`}>
-                    {service.icon}
-                  </div>
+                  >
+                  {/* icon removed per request */}
                   <h2 className={`font-semibold text-base mb-2 ${service.isEmergency ? "text-white" : "text-dental-slate-900"}`}>
                     {service.name}
                   </h2>
@@ -62,12 +63,15 @@ export default function ServicesPage() {
                       </div>
                     ))}
                   </div>
-                  <div className={`inline-flex items-center gap-1.5 text-xs font-semibold group-hover:gap-2.5 transition-all
-                    ${service.isEmergency ? "text-dental-mint" : "text-dental-navy-600"}`}>
-                    Learn more <ArrowRight size={13} />
-                  </div>
-                </a>
-              ))}
+                  {service.href && (
+                    <div className={`inline-flex items-center gap-1.5 text-xs font-semibold group-hover:gap-2.5 transition-all
+                      ${service.isEmergency ? "text-dental-mint" : "text-dental-navy-600"}`}>
+                      Learn more <ArrowRight size={13} />
+                    </div>
+                  )}
+                  </CardTag>
+                );
+              })}
             </div>
           </div>
         </section>

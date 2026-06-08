@@ -124,6 +124,7 @@ export interface BlogPost {
   emoji: string;
   bgClass: string;
   href: string;
+  content: string;
 }
 
 export type BlogCategory =

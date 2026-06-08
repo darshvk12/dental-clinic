@@ -74,9 +74,9 @@ export const CLINIC_CONFIG: ClinicConfig = {
 
 // ─── STATS ─────────────────────────────────────────────────────
 export const STATS: StatCard[] = [
-  { id: "patients",   value: "10,000+", numericValue: 10000, suffix: "+", label: "Happy Patients",     icon: "", waypoints: [0, 5000, 10000] },
-  { id: "experience", value: "18+",    numericValue: 18,   suffix: "+", label: "Years Experience",   icon: "", waypoints: [0, 9, 18] },
-  { id: "success",    value: "98%",    numericValue: 98,   suffix: "%", label: "Implant Success Rate", icon: "", waypoints: [0, 50, 98] },
+  { id: "patients",   value: "500+",  numericValue: 500,  suffix: "+", label: "Happy Patients",     icon: "", waypoints: [0, 250, 500] },
+  { id: "experience", value: "18+",   numericValue: 18,   suffix: "+", label: "Years Experience",   icon: "", waypoints: [0, 9, 18] },
+  { id: "treatments", value: "100+",  numericValue: 100,  suffix: "+", label: "Treatments",        icon: "", waypoints: [0, 50, 100] },
   { id: "reviews",    value: "1,000+", numericValue: 1000, suffix: "+", label: "5★ Google Reviews",  icon: "", waypoints: [0, 500, 1000] },
 ];
 
@@ -247,12 +247,189 @@ export const TESTIMONIALS: Testimonial[] = [
 
 // ─── BLOG POSTS ─────────────────────────────────────────────────
 export const BLOG_POSTS: BlogPost[] = [
-  { id: "b1", slug: "how-to-brush-floss-correctly", title: "The Dentist-Approved Way to Brush & Floss for a Lifetime of Healthy Gums", excerpt: "Most people brush their teeth but miss the critical technique nuances that prevent gum disease. Our hygienist walks you through the Bass technique and proper interdental cleaning.", category: "Oral Hygiene", author: "Dr. Pooja Bala", date: "May 2025", readTime: 5, emoji: "🦷", bgClass: "from-blue-50 to-blue-100", href: "/blog/how-to-brush-floss-correctly" },
-  { id: "b2", slug: "veneers-vs-whitening", title: "Veneers vs. Whitening: A Complete Guide to Choosing the Right Cosmetic Treatment", excerpt: "Both veneers and whitening can transform your smile — but they solve very different problems. Understanding which is right for your goals can save you time and money.", category: "Cosmetic Dentistry", author: "Dr. Pooja Bala", date: "April 2025", readTime: 7, emoji: "✨", bgClass: "from-purple-50 to-purple-100", href: "/blog/veneers-vs-whitening" },
-  { id: "b3", slug: "childs-first-dental-visit", title: "Your Child's First Dental Visit: What to Expect and When to Start", excerpt: "The IDA recommends a child's first dental visit by age 1. Early visits set the foundation for a lifetime of healthy, anxiety-free dental care. Here is how to prepare.", category: "Kids Dental Health", author: "Dr. Pooja Bala", date: "March 2025", readTime: 4, emoji: "🧒", bgClass: "from-orange-50 to-amber-100", href: "/blog/childs-first-dental-visit" },
-  { id: "b4", slug: "dental-implants-complete-guide", title: "Dental Implants in 2025: A Complete Patient Guide to Costs, Timeline, and What to Expect", excerpt: "Everything you need to know about modern implant dentistry — from CT-guided placement to osseointegration, final crown delivery, and long-term maintenance.", category: "Dental Care Tips", author: "Dr. Pooja Bala", date: "February 2025", readTime: 10, emoji: "🔬", bgClass: "from-teal-50 to-cyan-100", href: "/blog/dental-implants-complete-guide" },
-  { id: "b5", slug: "invisalign-vs-braces", title: "Invisalign vs. Traditional Braces: Which Is Right for You in 2025?", excerpt: "A head-to-head comparison of clear aligners vs. metal braces covering aesthetics, effectiveness, cost, duration, and which cases each handles best.", category: "Dental Technology", author: "Dr. Pooja Bala", date: "January 2025", readTime: 8, emoji: "😬", bgClass: "from-green-50 to-emerald-100", href: "/blog/invisalign-vs-braces" },
-  { id: "b6", slug: "overcoming-dental-anxiety", title: "Overcoming Dental Anxiety: How Modern Dentistry Makes It Easier Than Ever", excerpt: "Dental phobia affects 1 in 5 adults. Pain-free anaesthesia, sedation options, and compassionate care have made anxiety-free dentistry a reality for all patients.", category: "Patient Stories", author: "Dr. Pooja Bala", date: "December 2024", readTime: 6, emoji: "😌", bgClass: "from-rose-50 to-pink-100", href: "/blog/overcoming-dental-anxiety" },
+  {
+    id: "b1",
+    slug: "how-to-brush-floss-correctly",
+    title: "The Dentist-Approved Way to Brush & Floss for a Lifetime of Healthy Gums",
+    excerpt: "Most people brush their teeth but miss the critical technique nuances that prevent gum disease. Our hygienist walks you through the Bass Technique and other dentist-approved habits.",
+    category: "Oral Hygiene",
+    author: "Dr. Pooja Bala",
+    date: "May 2026",
+    readTime: 7,
+    emoji: "🦷",
+    bgClass: "from-blue-50 to-blue-100",
+    href: "/blog/how-to-brush-floss-correctly",
+    content: `
+      <p>Most people brush their teeth but miss the critical technique nuances that prevent gum disease. Our hygienist walks you through the <strong>Bass Technique</strong> and other dentist-approved oral hygiene practices that can help protect your teeth and gums for a lifetime.</p>
+      <p>Healthy gums are the foundation of a healthy smile. Yet, gum disease remains one of the most common oral health problems worldwide, often developing silently before symptoms become noticeable. Fortunately, a few simple daily habits can dramatically reduce your risk.</p>
+      <h2>Why Proper Brushing Matters</h2>
+      <p>Brushing isn't just about keeping your teeth looking clean. Its primary purpose is to remove plaque—a sticky film of bacteria that constantly forms on the teeth and along the gumline. If plaque is not removed effectively, it can lead to cavities, gum inflammation, bad breath, and eventually periodontal disease.</p>
+      <p>Many people brush regularly but use techniques that fail to clean the most important areas, especially where the teeth meet the gums.</p>
+      <h2>The Bass Technique: A Better Way to Brush</h2>
+      <p>The Bass Technique is one of the most effective methods recommended by dental professionals for plaque removal.</p>
+      <h3>Step 1: Position the Brush Correctly</h3>
+      <p>Hold your toothbrush at approximately a <strong>45-degree angle</strong> toward the gumline. The bristles should gently touch both the teeth and the edge of the gums.</p>
+      <h3>Step 2: Use Small Gentle Motions</h3>
+      <p>Rather than scrubbing aggressively, use short, gentle back-and-forth vibrations. This allows the bristles to reach slightly below the gumline where bacteria often accumulate.</p>
+      <h3>Step 3: Clean Every Surface</h3>
+      <p>Move systematically around your mouth, ensuring you clean:</p>
+      <ul>
+        <li>Outer tooth surfaces</li>
+        <li>Inner tooth surfaces</li>
+        <li>Chewing surfaces</li>
+        <li>The inside surfaces of the front teeth</li>
+      </ul>
+      <h3>Step 4: Brush for Two Minutes</h3>
+      <p>Spend at least <strong>two minutes brushing twice a day</strong>—once in the morning and once before bed.</p>
+      <h2>Flossing: The Step You Shouldn't Skip</h2>
+      <p>Even the best toothbrush cannot effectively clean between teeth. Flossing removes plaque and food particles from areas where cavities and gum disease commonly begin.</p>
+      <p>To floss correctly:</p>
+      <ul>
+        <li>Use about 18 inches of floss.</li>
+        <li>Gently guide it between teeth without snapping.</li>
+        <li>Curve the floss into a "C" shape around each tooth.</li>
+        <li>Slide it up and down beneath the gumline.</li>
+        <li>Use a clean section of floss for each tooth.</li>
+      </ul>
+      <p>Daily flossing can significantly improve gum health and reduce inflammation.</p>
+      <h2>Common Mistakes That Harm Your Gums</h2>
+      <p>Many patients are surprised to learn that over-brushing can be just as harmful as under-brushing.</p>
+      <p>Avoid these common mistakes:</p>
+      <ul>
+        <li>Brushing too hard</li>
+        <li>Using a hard-bristled toothbrush</li>
+        <li>Skipping flossing</li>
+        <li>Brushing for less than two minutes</li>
+        <li>Ignoring the tongue and gumline</li>
+        <li>Waiting too long to replace your toothbrush</li>
+      </ul>
+      <p>A soft-bristled toothbrush replaced every 3–4 months is usually the best choice.</p>
+      <h2>Extra Tips for Lifelong Oral Health</h2>
+      <p>Alongside brushing and flossing, consider these simple habits:</p>
+      <ul>
+        <li>Drink plenty of water throughout the day</li>
+        <li>Limit sugary snacks and beverages</li>
+        <li>Maintain a balanced diet rich in fruits and vegetables</li>
+        <li>Schedule regular dental check-ups and professional cleanings</li>
+        <li>Avoid tobacco products</li>
+      </ul>
+      <p>These small steps can make a significant difference in preserving your smile.</p>
+      <h2>When to See Your Dentist</h2>
+      <p>Don't ignore warning signs such as:</p>
+      <ul>
+        <li>Bleeding gums</li>
+        <li>Persistent bad breath</li>
+        <li>Swollen or red gums</li>
+        <li>Tooth sensitivity</li>
+        <li>Receding gums</li>
+        <li>Loose teeth</li>
+      </ul>
+      <p>Early treatment is often simpler, more comfortable, and more effective than waiting until problems become severe.</p>
+      <h2>Final Thoughts</h2>
+      <p>A healthy smile starts with healthy habits. By using the Bass Technique, flossing daily, and keeping up with regular dental visits, you can protect your teeth and gums for years to come.</p>
+      <p><strong>Remember: It's not just about brushing every day—it's about brushing correctly.</strong> A few extra minutes of proper oral care today can help prevent major dental problems tomorrow. <span>🦷✨</span></p>
+    `,
+  },
+  {
+    id: "b2",
+    slug: "veneers-vs-whitening",
+    title: "Veneers vs. Whitening: A Complete Guide to Choosing the Right Cosmetic Treatment",
+    excerpt: "Both veneers and whitening can transform your smile — but they solve very different problems. Understanding which is right for your goals can save you time, money, and help you achieve the results you truly want.",
+    category: "Cosmetic Dentistry",
+    author: "Dr. Pooja Bala",
+    date: "April 2026",
+    readTime: 7,
+    emoji: "✨",
+    bgClass: "from-purple-50 to-purple-100",
+    href: "/blog/veneers-vs-whitening",
+    content: `
+      <p>Both veneers and whitening can transform your smile — but they solve very different problems. Understanding which is right for your goals can save you time, money, and help you achieve the results you truly want.</p>
+      <p>A bright, confident smile is something many people desire, and modern cosmetic dentistry offers several ways to achieve it. Two of the most popular treatments are professional teeth whitening and dental veneers. While both can improve the appearance of your smile, they are designed for different purposes and deliver different results.</p>
+      <h2>What Whitening Does</h2>
+      <p>Professional teeth whitening works by removing stains and discoloration from the natural tooth surface. It is an excellent option for patients whose teeth are healthy but have become yellow or stained over time due to coffee, tea, smoking, or aging. Whitening is a quick, non-invasive treatment that can noticeably brighten your smile while preserving your natural tooth structure.</p>
+      <h2>What Veneers Do</h2>
+      <p>Dental veneers are thin custom-made shells that are bonded to the front surface of the teeth. Veneers not only improve tooth color but can also correct issues such as chipped teeth, minor gaps, uneven shapes, and worn enamel. They are often chosen by patients looking for a complete smile makeover rather than simply a brighter smile.</p>
+      <h2>Which Treatment is Right for You?</h2>
+      <p>The right treatment depends on your individual goals. If your main concern is discoloration, professional whitening may provide the results you're looking for. If you wish to improve both the color and appearance of your teeth, veneers may be a more suitable solution.</p>
+      <p>Every smile is unique, which is why a professional consultation is the best way to determine the most appropriate treatment option. A personalized treatment plan can help you achieve natural-looking, long-lasting results that complement your facial features and enhance your confidence.</p>
+      <h2>Investing in Your Smile</h2>
+      <p>Whether you choose whitening or veneers, investing in your smile is an investment in your self-confidence. With the right cosmetic treatment, achieving a healthier, brighter, and more attractive smile is easier than ever. <span>🦷✨</span></p>
+    `,
+  },
+  {
+    id: "b3",
+    slug: "childs-first-dental-visit",
+    title: "Your Child's First Dental Visit: What to Expect and When to Start",
+    excerpt: "The IDA recommends a child's first dental visit by age 1. Early visits set the foundation for a lifetime of healthy, anxiety-free dental care. Here is how to prepare and what you can expect during your child's first appointment.",
+    category: "Kids Dental Health",
+    author: "Dr. Pooja Bala",
+    date: "March 2026",
+    readTime: 5,
+    emoji: "🧒",
+    bgClass: "from-orange-50 to-amber-100",
+    href: "/blog/childs-first-dental-visit",
+    content: `
+      <p>The IDA recommends a child's first dental visit by age 1. Early visits set the foundation for a lifetime of healthy, anxiety-free dental care. Here is how to prepare and what you can expect during your child's first appointment.</p>
+      <p>Many parents assume that dental visits can wait until all of their child's teeth have appeared. However, early dental care plays an important role in preventing cavities, monitoring oral development, and helping children become comfortable with visiting the dentist.</p>
+      <h2>Why Early Dental Visits Matter</h2>
+      <p>Baby teeth may be temporary, but they serve important functions. They help children chew properly, speak clearly, and guide permanent teeth into their correct positions.</p>
+      <p>Regular dental check-ups from an early age allow dentists to identify potential issues before they become serious and provide guidance on proper oral hygiene habits.</p>
+      <h2>When Should Your Child First Visit the Dentist?</h2>
+      <p>The ideal time for a child's first dental visit is:</p>
+      <ul>
+        <li>By their first birthday, or</li>
+        <li>Within six months of the first tooth appearing</li>
+      </ul>
+      <p>Starting early helps create a positive relationship with dental care and reduces the likelihood of dental anxiety in the future.</p>
+      <h2>What Happens During the First Visit?</h2>
+      <p>The first appointment is usually short, gentle, and focused on helping your child feel comfortable.</p>
+      <p>During the visit, the dentist may:</p>
+      <ul>
+        <li>Examine your child's teeth, gums, and jaw development</li>
+        <li>Check for early signs of tooth decay</li>
+        <li>Discuss feeding and dietary habits</li>
+        <li>Provide guidance on brushing techniques</li>
+        <li>Answer any questions parents may have</li>
+      </ul>
+      <p>In most cases, no major treatment is required during the first visit unless a specific concern is identified.</p>
+      <h2>Preparing Your Child for the Appointment</h2>
+      <p>Parents can help make the experience enjoyable by:</p>
+      <ul>
+        <li>Speaking positively about the dentist</li>
+        <li>Reading children's books about dental visits</li>
+        <li>Scheduling appointments when the child is well-rested</li>
+        <li>Bringing a favorite toy or comfort item</li>
+      </ul>
+      <p>Avoid using words that may create fear or anxiety. A calm and positive approach often helps children feel more relaxed.</p>
+      <h2>Building Healthy Habits Early</h2>
+      <p>Good oral health starts at home. Parents should:</p>
+      <ul>
+        <li>Clean baby's gums even before teeth appear</li>
+        <li>Begin brushing as soon as the first tooth erupts</li>
+        <li>Limit sugary snacks and drinks</li>
+        <li>Encourage regular brushing routines</li>
+        <li>Schedule routine dental check-ups</li>
+      </ul>
+      <p>These habits can significantly reduce the risk of cavities and other dental problems.</p>
+      <h2>Common Concerns Parents Ask About</h2>
+      <p>Some of the most common topics discussed during a first visit include:</p>
+      <ul>
+        <li>Teething discomfort</li>
+        <li>Thumb sucking</li>
+        <li>Pacifier use</li>
+        <li>Bottle feeding habits</li>
+        <li>Proper brushing techniques</li>
+        <li>Fluoride recommendations</li>
+      </ul>
+      <p>Your dentist can provide personalized advice based on your child's age and development.</p>
+      <h2>Final Thoughts</h2>
+      <p>A child's first dental visit is an important milestone that helps establish lifelong oral health habits. Early check-ups allow for preventive care, early detection of problems, and a positive introduction to the dental environment.</p>
+      <p>By starting dental visits early and maintaining good oral hygiene at home, parents can help their children enjoy healthy smiles and confident dental experiences for years to come. <span>🦷✨</span></p>
+    `,
+  },
+  { id: "b4", slug: "dental-implants-complete-guide", title: "Dental Implants in 2025: A Complete Patient Guide to Costs, Timeline, and What to Expect", excerpt: "Everything you need to know about modern implant dentistry — from CT-guided placement to osseointegration, final crown delivery, and long-term maintenance.", category: "Dental Care Tips", author: "Dr. Pooja Bala", date: "February 2025", readTime: 10, emoji: "", bgClass: "from-teal-50 to-cyan-100", href: "/blog/dental-implants-complete-guide", content: "" },
+  { id: "b5", slug: "invisalign-vs-braces", title: "Invisalign vs. Traditional Braces: Which Is Right for You in 2025?", excerpt: "A head-to-head comparison of clear aligners vs. metal braces covering aesthetics, effectiveness, cost, duration, and which cases each handles best.", category: "Dental Technology", author: "Dr. Pooja Bala", date: "January 2025", readTime: 8, emoji: "😬", bgClass: "from-green-50 to-emerald-100", href: "/blog/invisalign-vs-braces", content: "" },
+  { id: "b6", slug: "overcoming-dental-anxiety", title: "Overcoming Dental Anxiety: How Modern Dentistry Makes It Easier Than Ever", excerpt: "Dental phobia affects 1 in 5 adults. Pain-free anaesthesia, sedation options, and compassionate care have made anxiety-free dentistry a reality for all patients.", category: "Patient Stories", author: "Dr. Pooja Bala", date: "December 2024", readTime: 6, emoji: "😌", bgClass: "from-rose-50 to-pink-100", href: "/blog/overcoming-dental-anxiety", content: "" },
 ];
 
 
@@ -298,9 +475,6 @@ export const TREATMENT_OPTIONS = [
 ];
 
 export const TIME_SLOTS = [
-  "9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM",
-  "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM",
-  "2:00 PM", "2:30 PM", "3:00 PM", "3:30 PM",
-  "4:00 PM", "4:30 PM", "5:00 PM", "5:30 PM",
-  "6:00 PM", "6:30 PM",
+   "10:15 AM","10:30 AM","10:45 AM","11:00 AM", "11:15 AM","11:30 AM", "11:45 AM","12:00 PM", "12:15 PM", "12:30 PM", "12:45 PM","1:00 PM", "1:15 PM", "1:30 PM", "1:45 AM", "2:00 PM",
+   "5:00 PM", "5:15 PM",  "5:30 PM", "5:45 PM","6:00 PM", "6:15 PM", "6:30 PM", "6:45 PM", "7:00 PM", "7:15 PM", "7:30 PM", "7:45 PM", "8:00 PM"
 ];

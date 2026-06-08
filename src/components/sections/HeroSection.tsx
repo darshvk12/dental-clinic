@@ -113,12 +113,13 @@ export default function HeroSection() {
 }
 
 function StatItem({ stat, index, inView }: { stat: typeof STATS[number]; index: number; inView: boolean }) {
-  const count = stat.waypoints 
-    ? useCountUpWithWaypoints(stat.waypoints, 1200, inView)
-    : useCountUp(stat.numericValue, 1200, inView);
-  const display = stat.numericValue >= 1000
-    ? (count >= 1000 ? `${Math.floor(count / 1000)}K` : `${count}`)
-    : `${count}`;
+  // Use a slightly longer duration for a natural count feel, but still smooth
+  const duration = 2500;
+  const count = stat.waypoints
+    ? useCountUpWithWaypoints(stat.waypoints, duration, inView)
+    : useCountUp(stat.numericValue, duration, inView);
+  // Always display the numeric count (no K abbreviation) so counts look realistic
+  const display = `${count}`;
 
   return (
     <motion.div
@@ -137,13 +138,14 @@ function StatItem({ stat, index, inView }: { stat: typeof STATS[number]; index: 
 }
 
 function StatsRow() {
-  const { ref, inView } = useInView();
+  // Trigger earlier when the top of the section enters viewport to avoid delayed start
+  const { ref, inView } = useInView({ threshold: 0.05, rootMargin: '0px 0px -10% 0px' });
 
   return (
     <motion.div
       ref={ref as React.RefObject<HTMLDivElement>}
       initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ delay: 0.8, duration: 0.7 }}
       className="mt-16 pt-8 border-t border-dental-slate-200"
     >
