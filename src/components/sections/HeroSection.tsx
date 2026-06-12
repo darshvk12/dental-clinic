@@ -5,6 +5,9 @@ import { Calendar, Phone, Star, ArrowRight, ShieldCheck } from "lucide-react";
 import { CLINIC_CONFIG, STATS } from "@/lib/data";
 import { sanitizePhone } from "@/lib/utils";
 import { useCountUp, useCountUpWithWaypoints, useInView } from "@/hooks";
+import dynamic from "next/dynamic";
+
+const ModelViewer = dynamic(() => import("@/components/ui/ModelViewer"), { ssr: false });
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 30 },
@@ -102,6 +105,18 @@ export default function HeroSection() {
               </div>
             </motion.div>
           </motion.div>
+
+          {/* ── Right visual (3D model) ── */}
+          <div className="hidden lg:flex items-start justify-end">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="relative w-full max-w-[360px] h-[360px] pointer-events-auto"
+            >
+              <ModelViewer />
+            </motion.div>
+          </div>
 
         </div>
 
