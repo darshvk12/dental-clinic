@@ -146,7 +146,7 @@ export default function Footer() {
         <div className="container-dental py-5">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
             <p className="text-xs text-white/30">
-              © {year} {CLINIC_CONFIG.name}. All rights reserved. Crafted with care in Mumbai.
+              © {year} Dr. Pooja Bala. All rights reserved. Crafted with care in Mumbai.
             </p>
             <div className="flex flex-wrap items-center gap-x-4 gap-y-1 justify-center sm:justify-end">
               {FOOTER_LINKS.legal.map(({ label, href }) => (

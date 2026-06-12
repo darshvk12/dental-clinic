@@ -120,8 +120,29 @@ img { max-width: 100%; height: auto; }
     transform: translateY(-3px);
   }
 
+  .marquee-container {
+    min-width: max-content;
+    display: flex;
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(226, 232, 240, 0.7);
+    border-radius: 1.75rem;
+    box-shadow: 0 18px 40px rgba(15, 45, 94, 0.08);
+    backdrop-filter: blur(16px);
+  }
+
+  .p-glass-padding { padding: 1.75rem; }
+  .py-stack-md { padding-top: 2rem; padding-bottom: 2rem; }
+  .mb-stack-lg { margin-bottom: 2rem; }
+  .px-container-padding { padding-left: var(--section-px); padding-right: var(--section-px); }
+
   .testimonial-scroll {
-    animation: scroll-left 26s linear infinite;
+    animation: scroll-left 55s linear infinite;
+    will-change: transform;
   }
 
   .testimonial-scroll:hover {

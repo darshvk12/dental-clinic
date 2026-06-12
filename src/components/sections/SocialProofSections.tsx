@@ -107,13 +107,26 @@ export function TestimonialsSection() {
           </RevealDiv>
         </div>
 
-        <div className="relative overflow-hidden">
-          <div className="flex gap-4 xl:gap-5 py-4 testimonial-scroll">
+        <div className="relative overflow-hidden py-stack-md">
+          <div className="marquee-container flex gap-8 testimonial-scroll">
             {Array.from({ length: 2 }).flatMap((_, groupIndex) =>
-              TESTIMONIALS.map((t, i) => (
-                <div key={`${t.id}-${groupIndex}`} className="w-[320px] flex-shrink-0">
-                  <TestimonialCard t={t} index={i} />
-                </div>
+              TESTIMONIALS.map((t) => (
+                <article
+                  key={`${t.id}-${groupIndex}`}
+                  className={`glass-card p-glass-padding flex flex-col justify-between h-full italic text-dental-slate-600 w-[500px] shrink-0 ${groupIndex === 0 ? "bg-white/80" : "bg-dental-slate-50/80"}`}
+                >
+                  <p className="text-lg mb-stack-lg leading-relaxed">"{t.review}"</p>
+
+                  <div className="flex items-center gap-4 not-italic">
+                    <div className="w-12 h-12 rounded-full bg-dental-slate-100 overflow-hidden flex items-center justify-center text-sm font-semibold text-dental-slate-700">
+                      {t.initials}
+                    </div>
+                    <div>
+                      <p className="font-bold text-dental-slate-900">{t.name}</p>
+                      <p className="text-[0.65rem] uppercase tracking-[0.2em] opacity-70">{t.treatment}</p>
+                    </div>
+                  </div>
+                </article>
               ))
             )}
           </div>
