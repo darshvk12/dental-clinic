@@ -104,26 +104,14 @@ export function AboutSection() {
             <div className="divider-dental" />
             <RevealDiv delay={0.2}>
               <p className="text-dental-slate-500 leading-relaxed mb-6">{doc.bio}</p>
-            </RevealDiv>
-
-            {/* Qualifications */}
-            <RevealDiv delay={0.25}>
-              <h3 className="text-sm font-bold uppercase tracking-widest text-dental-slate-400 mb-3">Qualifications & Memberships</h3>
-              <div className="space-y-2.5">
-                {doc.qualifications.map((q, i) => {
-                  const Icon = qualIcons[i % qualIcons.length];
-                  return (
-                    <div key={q} className="flex items-start gap-3 bg-dental-navy-50 rounded-xl p-3 text-sm text-dental-slate-700">
-                      <Icon size={16} className="text-dental-navy-500 mt-0.5 flex-shrink-0" />
-                      <span>{q}</span>
-                    </div>
-                  );
-                })}
-              </div>
+              <a href="/about" className="inline-flex items-center gap-2 text-dental-navy-600 hover:text-dental-navy-700 font-semibold text-sm transition-colors">
+                Read Full Bio
+                <span>→</span>
+              </a>
             </RevealDiv>
 
             {/* Philosophy quote */}
-            <RevealDiv delay={0.35} className="mt-6">
+            <RevealDiv delay={0.25} className="mt-8">
               <blockquote className="relative bg-dental-slate-900 text-white rounded-2xl p-6 overflow-hidden">
                 <div className="absolute -top-3 left-4 font-display text-[6rem] leading-none text-white/8 select-none">"</div>
                 <p className="font-display text-lg font-light italic leading-relaxed relative z-10">
@@ -145,7 +133,7 @@ export function AboutSection() {
 function ServiceCard({ service, index }: { service: Service; index: number }) {
   const { ref, inView } = useReveal<HTMLAnchorElement>();
   const imageSrc = "/images/teethcleaningservices.jpg";
-  const href = service.isEmergency ? `tel:${CLINIC_CONFIG.contact.emergencyPhone}` : "#appointment";
+  const href = "#appointment";
 
   return (
     <motion.a
@@ -208,7 +196,7 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
 
       {/* CTA */}
       <span className={`btn ${service.isEmergency ? "btn-ghost text-white border-white/30" : "btn-primary"} btn-sm gap-2 w-full justify-center mt-auto`}>
-        {service.isEmergency ? "Call Emergency Line" : "Book This Treatment"}
+        Book This Treatment
         <ArrowRight size={13} />
       </span>
     </motion.a>
@@ -273,7 +261,12 @@ function BACard({ item, index }: { item: BeforeAfterCase; index: number }) {
         <div className="bg-gradient-to-br from-dental-slate-700 to-dental-slate-900 flex items-center justify-center text-4xl relative overflow-hidden">
           {item.beforeImage && (
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={item.beforeImage} alt={`${item.title} — before`} className="w-full h-full object-contain z-0" loading="lazy" />
+            <img
+              src={item.beforeImage}
+              alt={`${item.title} — before`}
+              className={`w-full h-full ${item.id === "crown-1" ? "object-contain" : "object-cover"} z-0`}
+              loading="lazy"
+            />
           )}
           <span className="absolute top-2.5 left-2.5 text-[0.6rem] font-bold uppercase tracking-wider bg-black/50 text-white/90 px-2 py-1 rounded-md z-10">
             Before
@@ -283,7 +276,12 @@ function BACard({ item, index }: { item: BeforeAfterCase; index: number }) {
         <div className="bg-gradient-to-br from-dental-navy-700 to-dental-navy-900 flex items-center justify-center text-4xl relative overflow-hidden">
           {item.afterImage && (
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={item.afterImage} alt={`${item.title} — after`} className="w-full h-full object-contain z-0" loading="lazy" />
+            <img
+              src={item.afterImage}
+              alt={`${item.title} — after`}
+              className={`w-full h-full ${item.id === "crown-1" ? "object-contain" : "object-cover"} z-0`}
+              loading="lazy"
+            />
           )}
           <span className="absolute top-2.5 left-2.5 text-[0.6rem] font-bold uppercase tracking-wider bg-dental-mint/80 text-white px-2 py-1 rounded-md z-10">
             After

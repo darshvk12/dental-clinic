@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, Calendar, Menu, X, ChevronDown } from "lucide-react";
+import { Phone, Calendar, Menu, X, ChevronDown, MessageCircle } from "lucide-react";
 import { cn, sanitizePhone } from "@/lib/utils";
 import { CLINIC_CONFIG } from "@/lib/data";
 
@@ -138,11 +138,15 @@ export default function Navbar() {
                   <Calendar size={18} /> Book Appointment
                 </a>
                 <a
-                  href={`tel:${sanitizePhone(CLINIC_CONFIG.contact.emergencyPhone)}`}
-                  className="btn btn-emergency btn-lg w-full justify-center"
+                  href={`https://wa.me/${CLINIC_CONFIG.social.whatsapp}?text=${encodeURIComponent("Hello Dr. Pooja, I want to book a appointment")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobile(false)}
+                  className="btn btn-mint btn-lg w-full justify-center"
                 >
-                  <Phone size={18} /> Emergency: {CLINIC_CONFIG.contact.emergencyPhone}
+                  <MessageCircle size={18} /> WhatsApp Us
                 </a>
+                {/* Emergency phone removed from mobile menu per request */}
               </div>
 
               {/* Contact quick info */}

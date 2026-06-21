@@ -55,8 +55,15 @@ export default function BlogPage() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {BLOG_POSTS.map((post) => (
                 <article key={post.id} className="bg-white rounded-2xl overflow-hidden border border-dental-slate-100 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
-                  <div className={`h-48 bg-gradient-to-br ${post.bgClass} flex items-center justify-center text-5xl`}>
-                    {post.emoji}
+                  <div className="relative h-48 overflow-hidden">
+                    {post.coverImage ? (
+                      <img
+                        src={post.coverImage}
+                        alt={post.title}
+                        className="absolute inset-0 h-full w-full object-cover"
+                      />
+                    ) : null}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${post.bgClass} ${post.coverImage ? 'opacity-40' : 'opacity-100'}`} />
                   </div>
                   <div className="p-5">
                     <span className="inline-flex items-center gap-2 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-dental-mint mb-3">

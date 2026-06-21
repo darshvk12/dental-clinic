@@ -6,9 +6,9 @@ import { Phone, Clock, MapPin, AlertCircle, CheckCircle } from "lucide-react";
 import { sanitizePhone } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Emergency Dental Care Mumbai — 24/7 | PureSmile Dental",
+  title: "Emergency Dental Care — Same-Day Appointments | PureSmile Dental",
   description:
-    "Dental emergency in Mumbai? Call PureSmile Dental immediately. Same-day appointments for toothache, knocked-out teeth, broken crowns, abscesses. 24/7 emergency line.",
+    "Same-day emergency dental appointments for toothache, knocked-out teeth, broken crowns, and abscesses. Contact us for urgent care.",
   alternates: { canonical: "https://puresmile.in/emergency" },
 };
 
@@ -44,14 +44,14 @@ export default function EmergencyPage() {
               Call our emergency line immediately for same-day relief.
             </p>
             <a
-              href={`tel:${sanitizePhone(CLINIC_CONFIG.contact.emergencyPhone)}`}
+              href="#contact"
               className="inline-flex items-center gap-3 bg-white text-red-900 font-bold text-xl px-8 py-4 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:bg-red-50 transition-colors active:scale-95"
             >
               <Phone size={24} strokeWidth={2.5} />
-              {CLINIC_CONFIG.contact.emergencyPhone}
+              Contact Clinic
             </a>
             <p className="mt-4 text-red-300/60 text-sm">
-              Tap to call instantly. Available 24 hours, 7 days a week.
+              For immediate help, please use the contact options on this page.
             </p>
           </div>
         </section>
@@ -116,13 +116,7 @@ export default function EmergencyPage() {
                 <div className="bg-dental-navy-900 text-white rounded-3xl p-8 space-y-5">
                   <h3 className="font-display text-2xl font-light">Reach Us Now</h3>
                   <div className="space-y-4">
-                    <a href={`tel:${sanitizePhone(CLINIC_CONFIG.contact.emergencyPhone)}`} className="flex items-center gap-3 bg-red-600 rounded-2xl p-4 hover:bg-red-700 transition-colors">
-                      <Phone size={20} className="text-white" />
-                      <div>
-                        <div className="text-xs text-red-200 font-medium">Emergency Hotline</div>
-                        <div className="text-white font-bold text-lg">{CLINIC_CONFIG.contact.emergencyPhone}</div>
-                      </div>
-                    </a>
+                    {/* Emergency hotline removed per request */}
                     <a href={`tel:${sanitizePhone(CLINIC_CONFIG.contact.phone)}`} className="flex items-center gap-3 bg-white/10 rounded-2xl p-4 hover:bg-white/15 transition-colors">
                       <Phone size={20} className="text-dental-mint" />
                       <div>

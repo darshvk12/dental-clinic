@@ -1,16 +1,16 @@
 import Link from "next/link";
 import { CLINIC_CONFIG, SERVICES } from "@/lib/data";
-import { Phone, Mail, MapPin, Instagram, Facebook, Youtube, MessageCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram, Facebook, Youtube, Linkedin } from "lucide-react";
 
 const FOOTER_LINKS = {
   services: SERVICES.slice(0, 7).map(s => ({ label: s.name, href: s.href })),
   clinic: [
-    { label: "About Dr. Pooja Bala",    href: "#about" },
-    { label: "Smile Gallery",           href: "#gallery" },
-    { label: "Patient Reviews",         href: "#testimonials" },
-    { label: "FAQ",                     href: "#faq" },
-    { label: "Blog & Tips",             href: "#blog" },
-    { label: "Book Appointment",        href: "#appointment" },
+    { label: "About Dr. Pooja Bala",    href: "/services/root-canal#about" },
+    { label: "Smile Gallery",           href: "/services/root-canal#gallery" },
+    { label: "Patient Reviews",         href: "/services/root-canal#testimonials" },
+    { label: "FAQ",                     href: "/services/root-canal#faq" },
+    { label: "Blog & Tips",             href: "/services/root-canal#blog" },
+    { label: "Book Appointment",        href: "/services/root-canal#appointment" },
   ],
   legal: [
     { label: "Privacy Policy",     href: "/privacy" },
@@ -24,7 +24,7 @@ const SOCIAL_LINKS = [
   { label: "Instagram", href: CLINIC_CONFIG.social.instagram ?? "#", Icon: Instagram },
   { label: "Facebook",  href: CLINIC_CONFIG.social.facebook  ?? "#", Icon: Facebook },
   { label: "YouTube",   href: CLINIC_CONFIG.social.youtube   ?? "#", Icon: Youtube },
-  { label: "WhatsApp",  href: CLINIC_CONFIG.social.whatsapp  ?? "#", Icon: MessageCircle },
+  { label: "LinkedIn", href: CLINIC_CONFIG.social.linkedin ?? "#", Icon: Linkedin },
 ];
 
 export default function Footer() {
@@ -106,9 +106,9 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {FOOTER_LINKS.clinic.map(({ label, href }) => (
                 <li key={label}>
-                  <a href={href} className="text-sm text-white/55 hover:text-white transition-colors">
+                  <Link href={href} className="text-sm text-white/55 hover:text-white transition-colors">
                     {label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -130,13 +130,7 @@ export default function Footer() {
               ))}
             </div>
 
-            <div className="mt-6 p-3.5 bg-red-900/30 border border-red-500/20 rounded-xl">
-              <div className="text-xs font-bold text-red-300 mb-1">🚨 Dental Emergency?</div>
-              <a href={`tel:${CLINIC_CONFIG.contact.emergencyPhone}`} className="text-xs font-semibold text-white hover:text-dental-mint transition-colors block">
-                {CLINIC_CONFIG.contact.emergencyPhone}
-              </a>
-              <div className="text-[0.65rem] text-white/35 mt-0.5">Available 24/7</div>
-            </div>
+            {/* Emergency contact removed per request */}
           </div>
         </div>
       </div>
@@ -146,7 +140,7 @@ export default function Footer() {
         <div className="container-dental py-5">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
             <p className="text-xs text-white/30">
-              © {year} Dr. Pooja Bala. All rights reserved. Crafted with care in Mumbai.
+              © {year} Dr. Pooja Bala. All rights reserved. Crafted with care.
             </p>
             <div className="flex flex-wrap items-center gap-x-4 gap-y-1 justify-center sm:justify-end">
               {FOOTER_LINKS.legal.map(({ label, href }) => (

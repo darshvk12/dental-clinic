@@ -23,7 +23,7 @@ function RevealDiv({ children, delay = 0, className = "" }: {
 }
 
 export default function ContactSection() {
-  const { address, phone, emergencyPhone, email, hours } = CLINIC_CONFIG.contact;
+  const { address, phone, email, hours } = CLINIC_CONFIG.contact;
   const fullAddress = `${address.line1}${address.line2 ? ", " + address.line2 : ""}, ${address.city}, ${address.state} ${address.pin}`;
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`;
 
@@ -68,9 +68,7 @@ export default function ContactSection() {
                 <a href={`tel:${phone}`} className="text-dental-slate-700 text-sm font-semibold hover:text-dental-navy-700 transition-colors block">
                   {phone}
                 </a>
-                <a href={`tel:${emergencyPhone}`} className="inline-flex items-center gap-1.5 text-xs text-red-500 font-semibold mt-1 hover:text-red-700 transition-colors">
-                  🚨 Emergency: {emergencyPhone}
-                </a>
+                {/* Emergency phone removed per request */}
               </ContactCard>
             </RevealDiv>
 

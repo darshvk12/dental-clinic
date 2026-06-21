@@ -34,11 +34,40 @@ export default function AppointmentSection() {
   const [submittedName, setSubmittedName] = useState("");
 
   const {
-    register, handleSubmit, reset,
+    register, handleSubmit, reset, watch,
     formState: { errors },
   } = useForm<AppointmentFormValues>({
     resolver: zodResolver(appointmentSchema),
   });
+
+  // Watch selected date so we can filter today's time slots based on local time
+  const selectedDate = watch("date");
+
+  const parseSlotToDate = (slot: string, dateStr: string) => {
+    const m = slot.match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
+    if (!m) return null;
+    let hh = parseInt(m[1], 10);
+    const mm = parseInt(m[2], 10);
+    const ampm = m[3].toUpperCase();
+    if (ampm === "AM" && hh === 12) hh = 0;
+    if (ampm === "PM" && hh < 12) hh += 12;
+    // Create a local Date for the selected date + slot time
+    const iso = `${dateStr}T${String(hh).padStart(2, "0")}:${String(mm).padStart(2, "0")}:00`;
+    return new Date(iso);
+  };
+
+  const filteredTimeSlots = (() => {
+    if (!selectedDate) return TIME_SLOTS;
+    const today = new Date();
+    const sel = new Date(`${selectedDate}T00:00:00`);
+    const isToday = sel.getFullYear() === today.getFullYear() && sel.getMonth() === today.getMonth() && sel.getDate() === today.getDate();
+    if (!isToday) return TIME_SLOTS;
+    return TIME_SLOTS.filter(slot => {
+      const sd = parseSlotToDate(slot, selectedDate);
+      if (!sd) return false;
+      return sd.getTime() > Date.now();
+    });
+  })();
 
   const onSubmit = async (data: AppointmentFormValues) => {
     setSubmitState("loading");
@@ -95,7 +124,6 @@ export default function AppointmentSection() {
             <div className="space-y-3">
               {[
                 { icon: Clock, label: "Response Time", value: "Within 30 minutes" },
-                { icon: Phone, label: "Emergency Line", value: CLINIC_CONFIG.contact.emergencyPhone },
                 { icon: Calendar, label: "First Available", value: "Often same day" },
               ].map(({ icon: Icon, label, value }) => (
                 <RevealDiv key={label} delay={0.2}>
@@ -211,9 +239,13 @@ export default function AppointmentSection() {
                           className={cn("form-field cursor-pointer", errors.time && "border-red-400")}
                         >
                           <option value="">Select a time...</option>
-                          {TIME_SLOTS.map(slot => (
-                            <option key={slot} value={slot}>{slot}</option>
-                          ))}
+                          {filteredTimeSlots && filteredTimeSlots.length === 0 ? (
+                            <option value="">No available slots for the selected date</option>
+                          ) : (
+                            filteredTimeSlots.map(slot => (
+                              <option key={slot} value={slot}>{slot}</option>
+                            ))
+                          )}
                         </select>
                       </FieldWrapper>
 

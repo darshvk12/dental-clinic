@@ -79,18 +79,22 @@ const localBusinessSchema = {
     postalCode: CLINIC_CONFIG.contact.address.pin,
     addressCountry: "IN",
   },
-  geo: { "@type": "GeoCoordinates", latitude: "19.0590", longitude: "72.8360" },
+  geo: { "@type": "GeoCoordinates", latitude: "27.1767", longitude: "78.0081" },
   openingHoursSpecification: [
-    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday"], opens: "09:00", closes: "19:00" },
-    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Saturday"], opens: "09:00", closes: "17:00" },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday"], opens: "10:15", closes: "20:00" },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Saturday"], opens: "10:15", closes: "14:00" },
   ],
   aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "1247", bestRating: "5" },
-  medicalSpecialty: ["Cosmetic Dentistry","Implant Dentistry","Orthodontics","Endodontics","Pediatric Dentistry"],
-  hasMap: "https://maps.google.com/?q=PureSmile+Dental+Bandra+Mumbai",
+  medicalSpecialty: ["Cosmetic Dentistry","Implant Dentistry","Orthodontics","Endodontics"],
+  hasMap: `https://maps.google.com/?q=${encodeURIComponent(
+    `${CLINIC_CONFIG.name} ${CLINIC_CONFIG.contact.address.line1} ${CLINIC_CONFIG.contact.address.city}`
+  )}`,
   sameAs: [
     CLINIC_CONFIG.social.instagram ?? "",
     CLINIC_CONFIG.social.facebook ?? "",
     CLINIC_CONFIG.social.youtube ?? "",
+    CLINIC_CONFIG.social.linkedin ?? "",
+    CLINIC_CONFIG.social.whatsapp ? `https://wa.me/${CLINIC_CONFIG.social.whatsapp.replace(/[^0-9]/g, "")}` : "",
   ].filter(Boolean),
 };
 
@@ -101,7 +105,7 @@ const physicianSchema = {
   jobTitle: CLINIC_CONFIG.doctor.title,
   worksFor: { "@type": "MedicalOrganization", name: CLINIC_CONFIG.name },
   medicalSpecialty: "Prosthodontics",
-  alumniOf: "Nair Hospital Dental College, Mumbai",
+  alumniOf: "Nair Hospital Dental College",
   url: `${CLINIC_CONFIG.seo.canonicalUrl}/about`,
 };
 

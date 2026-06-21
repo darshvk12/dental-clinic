@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { SERVICES, CLINIC_CONFIG } from "@/lib/data";
+import SimpleAppointmentBanner from "@/components/sections/SimpleAppointmentBanner";
 import { CheckCircle, Clock, ArrowRight, Phone, Calendar, Star } from "lucide-react";
 
 interface Props {
@@ -20,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = SERVICES.find((s) => s.href === `/services/${slug}`);
   if (!service) return {};
   return {
-    title: `${service.name} in Mumbai | ${CLINIC_CONFIG.name}`,
+    title: `${service.name} | ${CLINIC_CONFIG.name}`,
     description: service.description,
     alternates: { canonical: `https://puresmile.in/services/${slug}` },
   };
@@ -167,25 +168,8 @@ export default async function ServicePage({ params }: Props) {
           </div>
         </section>
 
-        {/* Appointment section */}
-        <section id="appointment" className="py-16 bg-dental-slate-50">
-          <div className="container-dental text-center">
-            <h2 className="font-display text-display-md text-dental-slate-900 mb-3">
-              Book Your <em className="text-dental-navy-600">{service.name}</em> Consultation
-            </h2>
-            <p className="text-dental-slate-500 max-w-md mx-auto mb-8 text-base">
-              Same-day appointments often available. Our team will confirm within 30 minutes.
-            </p>
-            <div className="flex justify-center gap-3 flex-wrap">
-              <a href={`tel:${CLINIC_CONFIG.contact.phone}`} className="btn btn-primary btn-lg gap-2">
-                <Phone size={18} /> Call {CLINIC_CONFIG.contact.phone}
-              </a>
-              <a href="/#appointment" className="btn btn-ghost btn-lg gap-2">
-                <Calendar size={18} /> Fill Online Form
-              </a>
-            </div>
-          </div>
-        </section>
+        {/* Simple Appointment Banner */}
+        <SimpleAppointmentBanner />
       </main>
       <Footer />
     </>

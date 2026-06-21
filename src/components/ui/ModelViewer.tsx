@@ -108,17 +108,26 @@ export default function ModelViewer({ src = "/models/teeth.glb" }: { src?: strin
   }, []);
 
   return (
-    <div className="w-full h-full flex items-center justify-center">
+    <div className="flex items-center justify-center w-[280px] h-[280px]">
       <model-viewer
         ref={ref}
         src={src}
         alt="3D teeth model"
         camera-controls
         auto-rotate
-        exposure="1"
-        shadow-intensity="1"
-        style={{ width: '100%', height: '100%', maxWidth: '360px', maxHeight: '360px', touchAction: 'none', backgroundColor: 'transparent' }}
-        ar
+        camera-orbit="0deg 75deg 1m"
+        exposure="2"
+        shadow-intensity="0.3"
+        environment-image="neutral"
+        style={{ 
+          width: '100%', 
+          height: '100%', 
+          touchAction: 'none', 
+          backgroundColor: '#FFFFFF',
+          margin: '0',
+          display: 'block',
+          borderRadius: '8px'
+        }}
       />
     </div>
   );

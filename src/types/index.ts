@@ -14,6 +14,7 @@ export interface DoctorProfile {
   qualifications: string[];
   experience: number; // years
   bio: string;
+  fullBio?: string;
   philosophy: string;
   image?: string;
   fellowships: string[];
@@ -125,6 +126,7 @@ export interface BlogPost {
   bgClass: string;
   href: string;
   content: string;
+  coverImage?: string;
 }
 
 export type BlogCategory =

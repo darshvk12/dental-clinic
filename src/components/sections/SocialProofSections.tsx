@@ -272,8 +272,15 @@ function BlogCard({ post, index }: { post: BlogPost; index: number }) {
     >
       {/* Thumbnail */}
       <div className={`h-44 bg-gradient-to-br ${post.bgClass} flex items-center justify-center text-5xl relative overflow-hidden`}>
-        {post.emoji}
-        <div className="absolute bottom-3 left-3">
+        {post.coverImage ? (
+          <img
+            src={post.coverImage}
+            alt={post.title}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+        ) : null}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/0 to-black/10"></div>
+        <div className="absolute bottom-3 left-3 z-10">
           <span className="text-[0.65rem] font-bold uppercase tracking-wider bg-white/90 text-dental-navy-700 px-2.5 py-1 rounded-full shadow-sm">
             {post.category}
           </span>

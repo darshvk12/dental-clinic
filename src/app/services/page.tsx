@@ -5,9 +5,9 @@ import { SERVICES, CLINIC_CONFIG } from "@/lib/data";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: `Dental Services Mumbai — Implants, Veneers, Aligners | ${CLINIC_CONFIG.name}`,
+  title: `Advanced Endodontic, Cosmetic & Restorative Dental Care in Agra | ${CLINIC_CONFIG.name}`,
   description:
-    "Complete dental services in Bandra, Mumbai: implants, teeth whitening, smile makeovers, Invisalign, root canal, crowns, pediatric care, and emergency dentistry.",
+    "Advanced endodontic, cosmetic and restorative dental care in Agra led by Dr. Pooja Bala — root canal, implants, smile makeovers, gum treatment and full mouth rehabilitation.",
   alternates: { canonical: "https://puresmile.in/services" },
 };
 
@@ -24,8 +24,7 @@ export default function ServicesPage() {
               Our <em className="italic text-dental-mint">Services</em>
             </h1>
             <p className="text-white/55 max-w-xl mx-auto text-base leading-relaxed">
-              Multi-specialty dental care delivered by experts — from routine hygiene
-              to full smile transformations.
+              Advanced endodontic, cosmetic and restorative dental care led by Dr. Pooja Bala, focused on predictable outcomes and long-term function.
             </p>
           </div>
         </section>

@@ -60,12 +60,11 @@ export function WhyChooseSection() {
                 className="card-base p-6 relative overflow-hidden group"
               >
                 {/* Large number watermark */}
-                <span className="absolute top-2 right-4 font-display text-[5rem] leading-none font-light text-dental-navy-50 select-none pointer-events-none group-hover:text-dental-navy-100 transition-colors">
+                <span className="absolute top-2 right-4 z-0 font-display text-[4rem] leading-none font-light text-dental-navy-50 select-none pointer-events-none group-hover:text-dental-navy-100 transition-colors">
                   {item.number}
                 </span>
 
-                <div className="text-3xl mb-4">{item.icon}</div>
-                <h3 className="text-base font-semibold text-dental-slate-900 mb-2">{item.title}</h3>
+                <h3 className="relative z-10 text-base font-semibold text-dental-slate-900 mb-2">{item.title}</h3>
                 <p className="text-sm text-dental-slate-500 leading-relaxed relative z-10">{item.description}</p>
               </motion.div>
             );

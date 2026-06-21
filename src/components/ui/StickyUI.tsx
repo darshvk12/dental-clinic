@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Calendar, ArrowUp, Phone } from "lucide-react";
+import { Calendar, ArrowUp, MessageCircle } from "lucide-react";
 import { CLINIC_CONFIG } from "@/lib/data";
 import { sanitizePhone } from "@/lib/utils";
 
@@ -40,13 +40,16 @@ export default function StickyUI() {
               Book Appointment
             </a>
             <a
-              href={`tel:${sanitizePhone(CLINIC_CONFIG.contact.emergencyPhone)}`}
-              className="flex items-center justify-center gap-2 bg-red-600 text-white px-5 py-2.5 rounded-full text-xs font-semibold shadow-lg hover:bg-red-700 transition-all active:scale-95"
-              aria-label="Call emergency line"
+              href={`https://wa.me/${CLINIC_CONFIG.social.whatsapp}?text=${encodeURIComponent("Hello Dr. Pooja, I want to book a appointment")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 bg-green-600 text-white px-5 py-2.5 rounded-full text-xs font-semibold shadow-lg hover:bg-green-700 transition-all active:scale-95"
+              aria-label="Chat on WhatsApp"
             >
-              <Phone size={13} strokeWidth={2.5} />
-              Emergency
+              <MessageCircle size={13} strokeWidth={2.5} />
+              WhatsApp
             </a>
+            {/* Emergency button removed per request */}
           </motion.div>
         )}
       </AnimatePresence>

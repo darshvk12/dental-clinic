@@ -34,10 +34,10 @@ export default function HeroSection() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-dental-navy-50/40 blur-3xl" />
       </motion.div>
 
-      <div className="container-dental relative z-10 pt-28 pb-16">
-        <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
+      <div className="container-dental relative z-10 pt-32 pb-20 min-h-[calc(100vh-80px)]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-center">
           {/* ── Left content ── */}
-          <motion.div style={{ opacity }}>
+          <motion.div>
             {/* Badge */}
             <motion.div {...fadeUp(0)}>
               <div className="badge mb-6 w-fit">
@@ -71,9 +71,9 @@ export default function HeroSection() {
                 <ArrowRight size={16} className="opacity-70" />
               </a>
               <a
-                href={`tel:${sanitizePhone(CLINIC_CONFIG.contact.emergencyPhone)}`}
+                href="#contact"
                 className="btn btn-emergency btn-lg gap-2"
-                aria-label="Emergency dental care"
+                aria-label="Emergency information"
               >
                 <Phone size={18} strokeWidth={2} />
                 Emergency Care
@@ -107,12 +107,12 @@ export default function HeroSection() {
           </motion.div>
 
           {/* ── Right visual (3D model) ── */}
-          <div className="hidden lg:flex items-start justify-end">
+          <div className="hidden lg:flex items-center justify-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="relative w-full max-w-[360px] h-[360px] pointer-events-auto"
+              className="flex items-center justify-center"
             >
               <ModelViewer />
             </motion.div>

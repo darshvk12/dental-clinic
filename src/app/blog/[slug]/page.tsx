@@ -50,7 +50,6 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                   <span className="inline-flex items-center gap-2 rounded-full bg-dental-mint/10 border border-dental-mint/20 px-3 py-1 text-xs uppercase tracking-[0.18em] font-semibold text-dental-mint">
                     {post.category}
                   </span>
-                  <span className="text-3xl">{post.emoji}</span>
                 </div>
                 <h1 className="mt-4 text-3xl font-display text-dental-slate-900 sm:text-4xl">
                   {post.title}

@@ -14,9 +14,8 @@ export function sanitizePhone(phone: string): string {
 }
 
 export function getMinDate(): string {
-  const tomorrow = new Date();
-  tomorrow.setDate(tomorrow.getDate() + 1);
-  return tomorrow.toISOString().split("T")[0];
+  const today = new Date();
+  return today.toISOString().split("T")[0];
 }
 
 export function formatDate(dateStr: string): string {
