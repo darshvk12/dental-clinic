@@ -132,7 +132,6 @@ export function AboutSection() {
 /* ══════════════════════════════════════════════════════════════ */
 function ServiceCard({ service, index }: { service: Service; index: number }) {
   const { ref, inView } = useReveal<HTMLAnchorElement>();
-  const imageSrc = "/images/teethcleaningservices.jpg";
   const href = "#appointment";
 
   return (
@@ -151,14 +150,16 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
         </div>
       )}
 
-      <div className="relative overflow-hidden -mx-6 -mt-6 mb-4 h-56">
-        <Image
-          src={imageSrc}
-          alt={service.name}
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, 33vw"
-        />
+      <div className="relative overflow-hidden -mx-6 -mt-6 mb-4 h-56 bg-dental-slate-100/70">
+        {service.image && (
+          <Image
+            src={service.image}
+            alt={service.name}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 33vw"
+          />
+        )}
       </div>
 
       {/* Name */}

@@ -17,7 +17,8 @@ export const CLINIC_CONFIG: ClinicConfig = {
     bio: "Dr. Pooja Bala is a highly experienced Endodontist and Restorative Dentist with over 18 years of clinical expertise. She completed her BDS from Maharshi Dayanand University, Rohtak in 2008 and is dedicated to helping patients achieve healthy, confident smiles through advanced treatment solutions.",
     fullBio: "Dr. Pooja Bala is a highly experienced Endodontist and Restorative Dentist with over 18 years of clinical expertise in providing comprehensive dental care. She completed her Bachelor of Dental Surgery (BDS) from Maharshi Dayanand University, Rohtak, in 2008 and has dedicated her career to helping patients achieve healthy, confident smiles through advanced and personalized treatment solutions.\n\nSpecializing in Endodontics and Restorative Dentistry, Dr. Bala is skilled in diagnosing and managing a wide range of dental conditions, with particular expertise in root canal treatments, restorative procedures, pain management, and preventive dental care. Her approach combines clinical precision with the latest advancements in dental technology, ensuring effective, minimally invasive, and long-lasting treatment outcomes.\n\nKnown for her compassionate and patient-centric approach, Dr. Bala believes that exceptional dental care goes beyond treatment. She focuses on creating a comfortable and anxiety-free environment where patients feel heard, informed, and confident throughout their dental journey. By emphasizing clear communication, ethical practice, and personalized treatment planning, she strives to build lasting relationships based on trust and care.\n\nDr. Bala is committed to continuous professional development and stays updated with modern techniques and innovations in dentistry. Her dedication to excellence is reflected in her meticulous attention to detail, commitment to patient safety, and passion for delivering the highest standards of oral healthcare.\n\nShe is an active member of the Indian Dental Association (IDA), the Indian Association of Conservative Dentistry and Endodontics (IACDE), and the Indian Endodontic Society (IES), reflecting her commitment to professional growth and excellence in specialized dental care.\n\nWhether providing routine dental treatments or managing complex endodontic procedures, Dr. Pooja Bala remains dedicated to improving oral health, enhancing patient confidence, and creating healthier smiles for every patient she serves.",
 
-    philosophy: "",
+    philosophy:
+      "Dentistry is not just about fixing teeth — it is about restoring confidence, health, and the pure joy of a genuine smile.",
     fellowships: [],
   },
   contact: {
@@ -75,7 +76,6 @@ export const TRUST_BADGES: TrustBadge[] = [
   { id: "ida",    icon: "", label: "Indian Endodontist Member " },
   { id: "award",  icon: "", label: "Best Dental Clinic 2024" },
   { id: "aacd",   icon: "", label: "AACD Accredited" },
-  { id: "nabh",   icon: "", label: "NABH Accredited Clinic" },
   { id: "icoi",   icon: "", label: "ICOI Fellow" },
 ];
 
@@ -88,99 +88,11 @@ export const SERVICES: Service[] = [
     shortDesc: "Pain-free endodontic treatment to save infected or damaged natural teeth with precision care.",
     description: "Advanced root canal therapy by Dr. Pooja Bala using modern rotary instrumentation, digital diagnostics, and STA Wand anaesthesia. Eliminates infection while preserving your natural tooth structure. Single-visit protocols available for eligible cases.",
     benefits: ["Single-visit treatment available for eligible cases", "Advanced endodontic care", "Preserves natural teeth"],
+    image: "/images/Root Canal.jpg",
     duration: "60–90 minutes",
     priceRange: "₹5,000",
     isFeatured: true,
     href: "/services/root-canal",
-  },
-  {
-    id: "re-root-canal",
-    icon: "",
-    name: "Re-Root Canal Treatment",
-    shortDesc: "Specialized retreatment for failed or previously treated root canals with advanced diagnosis.",
-    description: "Expert retreatment of root canals that failed or developed persistent infections. Dr. Pooja Bala uses digital radiography and precision techniques to identify and resolve the underlying cause, saving teeth from extraction and restoring long-term health.",
-    benefits: ["Treats persistent infections", "Saves teeth from extraction", "Advanced diagnosis and retreatment"],
-    duration: "60–90 minutes",
-    priceRange: "₹8,000",
-    href: "/services/re-root-canal",
-  },
-  {
-    id: "dental-trauma",
-    icon: "",
-    name: "Dental Trauma & Tooth Restoration",
-    shortDesc: "Emergency care and expert restoration for broken, cracked, or traumatically injured teeth.",
-    description: "Immediate evaluation and treatment of dental injuries including broken teeth, root fractures, and trauma. Dr. Pooja Bala uses advanced bonding and restorative techniques to preserve tooth structure and restore both function and aesthetics after injury.",
-    benefits: ["Emergency management", "Tooth preservation", "Functional restoration"],
-    duration: "30–120 minutes",
-    priceRange: "₹3,000",
-    href: "/services/dental-trauma",
-  },
-  {
-    id: "whitening",
-    icon: "",
-    name: "Teeth Whitening",
-    shortDesc: "Professional in-office Zoom whitening for a dramatically brighter, more confident smile.",
-    description: "Clinically supervised bleaching using Philips Zoom technology with sensitivity-managed protocols. Achieve 8–10 shade improvements in 90 minutes, with custom take-home trays for long-lasting results and periodic touch-ups.",
-    benefits: ["Safe clinical procedure", "Noticeable shade improvement", "Long-lasting results"],
-    duration: "90 minutes",
-    priceRange: "₹8,000",
-    href: "/services/teeth-whitening",
-  },
-  {
-    id: "makeover",
-    icon: "",
-    name: "Smile Makeover",
-    shortDesc: "Comprehensive smile transformation with Digital Smile Design and expert cosmetic enhancements.",
-    description: "Complete smile redesign by Dr. Pooja Bala combining veneers, whitening, bonding, crowns and restorative work. Digital Smile Design lets you preview your new smile before treatment. Customized to your facial features and goals for a natural, radiant result.",
-    benefits: ["Personalized smile design", "Veneers and cosmetic enhancements", "Natural-looking aesthetic results"],
-    duration: "Multiple visits",
-    priceRange: "₹80,000",
-    isFeatured: true,
-    href: "/services/smile-makeover",
-  },
-  {
-    id: "gap-closure",
-    icon: "",
-    name: "Gap Closure (Diastema Closure)",
-    shortDesc: "Close unwanted spaces between teeth for immediate smile harmony and confidence.",
-    description: "Minimally invasive closure of diastemas using direct composite bonding or ultra-thin veneers. Achieve a balanced, harmonious smile without extensive preparation. Results are immediate and natural-looking, restoring your smile's proportion and alignment.",
-    benefits: ["Minimally invasive treatment", "Natural-looking results", "Immediate aesthetic improvement"],
-    duration: "1–2 visits",
-    priceRange: "₹7,000",
-    href: "/services/gap-closure",
-  },
-  {
-    id: "bonding",
-    icon: "",
-    name: "Tooth-Colored Fillings & Cosmetic Bonding",
-    shortDesc: "Aesthetic, shade-matched restorations for decayed, chipped, or damaged teeth.",
-    description: "Direct composite bonding and tooth-colored fillings that blend seamlessly with your natural teeth. Metal-free, conservative approach that preserves maximum tooth structure while delivering beautiful, long-lasting results.",
-    benefits: ["Shade-matched restorations", "Metal-free treatment", "Conservative approach"],
-    duration: "30–60 minutes",
-    priceRange: "₹2,000",
-    href: "/services/cosmetic-bonding",
-  },
-  {
-    id: "crowns",
-    icon: "",
-    name: "Crowns & Bridges",
-    shortDesc: "High-strength ceramic crowns and bridges for restored function and natural aesthetics.",
-    description: "Full-zirconia and e.max ceramic crowns with precision margins and custom shade-matching. Fixed bridges replace missing teeth without implants. All restorations are designed for exceptional strength, longevity, and a natural tooth-like appearance.",
-    benefits: ["Natural appearance", "High-strength materials", "Long-term durability"],
-    duration: "1–2 visits",
-    priceRange: "₹10,000",
-    href: "/services/crowns-bridges",
-  },
-  {
-    id: "inlays-onlays",
-    icon: "",
-    name: "Inlays, Onlays & Biomimetic Restorations",
-    shortDesc: "Advanced biomimetic restorations that preserve maximum natural tooth structure and strength.",
-    description: "Precision inlays and onlays designed to restore damaged teeth while keeping more natural structure intact than traditional crowns. Biomimetic approach mimics natural tooth anatomy, providing superior strength and longevity.",
-    benefits: ["Conservative restorations", "Biomimetic principles", "Long-lasting performance"],
-    duration: "1–2 visits",
-    priceRange: "₹6,000",
-    href: "/services/inlays-onlays",
   },
   {
     id: "implants",
@@ -189,21 +101,48 @@ export const SERVICES: Service[] = [
     shortDesc: "Permanent, natural-looking replacement for single or multiple missing teeth.",
     description: "CBCT-guided implant planning by Dr. Pooja Bala with prosthetic-led placement ensures optimal position and bite alignment. Nobel Biocare implants with custom ceramic crowns restore chewing function and provide a solution that lasts a lifetime.",
     benefits: ["Restores chewing function", "Natural appearance", "Long-term solution"],
+    image: "/images/Dental Implants.png",
     duration: "Multiple visits over months",
     priceRange: "₹25,000",
     isFeatured: true,
     href: "/services/dental-implants",
   },
   {
-    id: "full-mouth",
+    id: "makeover",
     icon: "",
-    name: "Full Mouth Rehabilitation",
-    shortDesc: "Complete oral restoration combining implants, crowns, and restorative work for full smile renewal.",
-    description: "Comprehensive multidisciplinary rehabilitation addressing all aspects of your oral health. Combines implants, crowns, periodontal care, and bite correction to restore chewing efficiency, comfort, and facial aesthetics. Customized treatment plan tailored to your unique needs.",
-    benefits: ["Customized treatment planning", "Restores comfort and function", "Complete smile transformation"],
-    duration: "Multiple phases",
-    priceRange: "₹50,000+",
-    href: "/services/full-mouth-rehab",
+    name: "Smile Makeover",
+    shortDesc: "Comprehensive smile transformation with Digital Smile Design and expert cosmetic enhancements.",
+    description: "Complete smile redesign by Dr. Pooja Bala combining veneers, whitening, bonding, crowns and restorative work. Digital Smile Design lets you preview your new smile before treatment. Customized to your facial features and goals for a natural, radiant result.",
+    benefits: ["Personalized smile design", "Veneers and cosmetic enhancements", "Natural-looking aesthetic results"],
+    image: "/images/Smile Makeover.png",
+    duration: "Multiple visits",
+    priceRange: "₹80,000",
+    isFeatured: true,
+    href: "/services/smile-makeover",
+  },
+  {
+    id: "crowns",
+    icon: "",
+    name: "Crowns & Bridges",
+    shortDesc: "High-strength ceramic crowns and bridges for restored function and natural aesthetics.",
+    description: "Full-zirconia and e.max ceramic crowns with precision margins and custom shade-matching. Fixed bridges replace missing teeth without implants. All restorations are designed for exceptional strength, longevity, and a natural tooth-like appearance.",
+    benefits: ["Natural appearance", "High-strength materials", "Long-term durability"],
+    image: "/images/Crowns and Bridges.png",
+    duration: "1–2 visits",
+    priceRange: "₹10,000",
+    href: "/services/crowns-bridges",
+  },
+  {
+    id: "tooth-colored-fillings",
+    icon: "",
+    name: "Tooth-Colored Fillings",
+    shortDesc: "Aesthetic tooth-colored restorations for decayed or damaged teeth.",
+    description: "Shade-matched composite fillings and conservative restorations that blend seamlessly with your natural smile. Preserves tooth structure while restoring strength, function, and a healthy appearance.",
+    benefits: ["Natural-looking finish", "Metal-free restoration", "Conservative tooth preservation"],
+    image: "/images/Tooth Colored Fillings.jpg",
+    duration: "30–60 minutes",
+    priceRange: "₹2,000",
+    href: "/services/tooth-colored-fillings",
   },
   {
     id: "gum-treatment",
@@ -212,9 +151,46 @@ export const SERVICES: Service[] = [
     shortDesc: "Professional periodontal therapy and deep cleaning for long-term gum and teeth health.",
     description: "Expert scaling, root planing, and Airflow deep cleaning to remove tartar, bacteria, and toxins. Reduces gum inflammation, stops bleeding, and prevents tooth loss. Includes personalized oral hygiene coaching and long-term maintenance protocols.",
     benefits: ["Scaling & root planing", "Reduces inflammation", "Helps prevent tooth loss"],
+    image: "/images/Gum Treatment and Deep Cleaning.png",
     duration: "45–90 minutes",
     priceRange: "₹2,500",
     href: "/services/gum-treatment",
+  },
+  {
+    id: "full-mouth",
+    icon: "",
+    name: "Full Mouth Rehabilitation",
+    shortDesc: "Complete oral restoration combining implants, crowns, and restorative work for full smile renewal.",
+    description: "Comprehensive multidisciplinary rehabilitation addressing all aspects of your oral health. Combines implants, crowns, periodontal care, and bite correction to restore chewing efficiency, comfort, and facial aesthetics. Customized treatment plan tailored to your unique needs.",
+    benefits: ["Customized treatment planning", "Restores comfort and function", "Complete smile transformation"],
+    image: "/images/Full Mouth Rehabilation.png",
+    duration: "Multiple phases",
+    priceRange: "₹50,000+",
+    href: "/services/full-mouth-rehab",
+  },
+  {
+    id: "dentures",
+    icon: "",
+    name: "Dentures & Tooth Replacement",
+    shortDesc: "Comfortable, natural-looking dentures and replacement solutions for missing teeth.",
+    description: "Custom dentures, overdentures, and tooth replacement options designed for comfort, fit, and natural aesthetics. Ideal for partial and full arches, with flexible or acrylic designs to restore daily function and confidence.",
+    benefits: ["Custom fit", "Improved chewing and speech", "Natural appearance"],
+    image: "/images/Dentures and Tooth Replacement.png",
+    duration: "Multiple visits",
+    priceRange: "₹15,000+",
+    href: "/services/dentures-tooth-replacement",
+  },
+  {
+    id: "general-denistry",
+    icon: "",
+    name: "General Dentistry",
+    shortDesc: "Routine dental care, preventive exams, and conservative treatments for lasting oral health.",
+    description: "Comprehensive general dentistry services including routine checkups, oral hygiene care, cavity prevention, and maintenance treatments. Focused on early detection, patient education, and long-term dental wellness.",
+    benefits: ["Preventive care", "Routine monitoring", "Health-focused dentistry"],
+    image: "/images/General Dentistry.png",
+    duration: "30–60 minutes",
+    priceRange: "₹1,500",
+    href: "/services/general-dentistry",
   },
 ];
 
@@ -234,7 +210,7 @@ export const WHY_CHOOSE: WhyChooseItem[] = [
   { id: "painless",  number: "02", icon: "", title: "Pain-Free Guarantee",    description: "STA Wand computer-controlled anaesthesia, nitrous oxide sedation, and a gentle team. We promise comfort — or we make it right." },
   { id: "team",      number: "03", icon: "", title: "Multi-Specialty Team", description: "Implantologist, prosthodontist and endodontist — collaborative, evidence-based care under one roof." },
   { id: "pricing",   number: "04", icon: "", title: "Transparent Pricing",   description: "Detailed itemised estimates before we begin. No hidden fees, no upselling. Third-party financing available at 0% EMI." },
-  { id: "schedule",  number: "05", icon: "", title: "Flexible Scheduling",   description: "Book online 24/7. Early mornings from 10:15 AM, evenings until 8 PM, and emergency slots always reserved." },
+  { id: "schedule",  number: "05", icon: "", title: "Flexible Scheduling",   description: "Book online 24/7. Early mornings from 10:00 AM, evenings until 8 PM, and emergency slots always reserved." },
   { id: "sterilisation", number: "06", icon: "", title: "Hospital-Grade Sterilisation", description: "Class B autoclave, single-use disposables, and real-time sterilisation monitoring. NABH-compliant infection control protocols." },
 ];
 
@@ -355,6 +331,7 @@ export const BLOG_POSTS: BlogPost[] = [
     emoji: "",
     bgClass: "from-purple-50 to-purple-100",
     href: "/blog/veneers-vs-whitening",
+    coverImage: "/images/VeneersVsWhiteningBlog.png",
     content: `
       <p>Both veneers and whitening can transform your smile — but they solve very different problems. Understanding which is right for your goals can save you time, money, and help you achieve the results you truly want.</p>
       <p>A bright, confident smile is something many people desire, and modern cosmetic dentistry offers several ways to achieve it. Two of the most popular treatments are professional teeth whitening and dental veneers. While both can improve the appearance of your smile, they are designed for different purposes and deliver different results.</p>
@@ -442,6 +419,40 @@ export const BLOG_POSTS: BlogPost[] = [
     `,
   },
   { id: "b4", slug: "dental-implants-complete-guide", title: "Dental Implants in 2026: A Complete Patient Guide to Costs, Timeline, and What to Expect", excerpt: "Everything you need to know about modern implant dentistry — from CT-guided placement to osseointegration, final crown delivery, and long-term maintenance.", category: "Dental Care Tips", author: "Dr. Pooja Bala", date: "February 2025", readTime: 10, emoji: "", bgClass: "from-teal-50 to-cyan-100", href: "/blog/dental-implants-complete-guide", coverImage: "/images/dentalguideBlog.png", content: "" },
+  {
+    id: "b5",
+    slug: "choosing-the-right-toothbrush",
+    title: "How to Choose the Right Toothbrush and Toothpaste for a Healthier Smile",
+    excerpt: "The right toothbrush and toothpaste can transform your daily routine. Learn how to select the best tools for clean teeth, healthy gums, and long-term oral wellness.",
+    category: "Oral Hygiene",
+    author: "Dr. Pooja Bala",
+    date: "June 2026",
+    readTime: 6,
+    emoji: "",
+    bgClass: "from-emerald-50 to-emerald-100",
+    href: "/blog/choosing-the-right-toothbrush",
+    coverImage: "/images/RightToothBrushBlog.png",
+    content: `
+      <p>The foundation of a great oral care routine starts with the toothbrush and toothpaste you use every day. When chosen well, these tools remove plaque, protect enamel, and help prevent cavities and gum disease.</p>
+      <h2>Soft, Medium, or Hard Bristles?</h2>
+      <p>Most dental professionals recommend a soft-bristled brush. Soft bristles are gentle on enamel and gums while still cleaning effectively. Medium or hard bristles can wear down enamel and irritate the gums, especially when used with heavy pressure.</p>
+      <h2>Manual or Powered Brush?</h2>
+      <p>Both manual and powered toothbrushes can deliver excellent results when used properly. Powered brushes often make it easier to maintain the recommended two-minute brushing time and can help people with limited dexterity or orthodontic appliances clean more consistently.</p>
+      <h2>Replace Your Brush Regularly</h2>
+      <p>Replace your toothbrush or brush head every 3 months, or sooner if the bristles appear frayed. Worn bristles are less effective and can leave plaque behind.</p>
+      <h2>Choosing the Right Toothpaste</h2>
+      <p>Select a fluoride toothpaste to strengthen enamel and prevent decay. If you have sensitive teeth, choose a formula containing potassium nitrate or stannous fluoride. For stain removal, use a dentist-approved whitening toothpaste rather than abrasive products.</p>
+      <h2>Brushing Tips for Better Oral Health</h2>
+      <ul>
+        <li>Brush twice daily for two minutes each time.</li>
+        <li>Use gentle, circular motions and clean all tooth surfaces.</li>
+        <li>Brush along the gumline without pressing too hard.</li>
+        <li>Clean your tongue to reduce bacteria and freshen breath.</li>
+      </ul>
+      <h2>Ask Your Dentist for Personalized Advice</h2>
+      <p>Your dentist can recommend the best toothbrush and toothpaste for your needs, whether you have sensitive teeth, restorations, braces, or gum concerns. Personalized guidance makes daily care more effective and keeps your smile healthier for years to come.</p>
+    `,
+  },
   // Removed blog post promoting Invisalign/aligner brands per content update
   { id: "b6", slug: "overcoming-dental-anxiety", title: "Overcoming Dental Anxiety: How Modern Dentistry Makes It Easier Than Ever", excerpt: "Dental phobia affects 1 in 5 adults. Pain-free anaesthesia, sedation options, and compassionate care have made anxiety-free dentistry a reality for all patients.", category: "Patient Stories", author: "Dr. Pooja Bala", date: "December 2024", readTime: 6, emoji: "", bgClass: "from-rose-50 to-pink-100", href: "/blog/overcoming-dental-anxiety", coverImage: "/images/DentalanxietyBlog.png", content: "" },
 ];
@@ -455,19 +466,19 @@ export const FAQS: FAQItem[] = [
   { id: "f4",  question: "Is a root canal painful?", answer: "No — modern root canal treatment at PureSmile is no more uncomfortable than a routine filling. We use the STA Wand computer-controlled anesthetic delivery for virtually painless injections, combined with ProTaper NEXT rotary files for efficient, single-visit treatment. Most patients are surprised at how comfortable it is.", category: "Treatments" },
   { id: "f5",  question: "How much do clear aligners typically cost?", answer: "Clear aligner costs vary by case complexity and provider; we will discuss options and costs in your consultation and recommend the most appropriate system if orthodontic treatment is needed.", category: "Cost & Insurance" },
   { id: "f6",  question: "At what age should a child first see a dentist?", answer: "The Indian Dental Association recommends a child's first visit by their first birthday or within 6 months of their first tooth erupting — whichever comes first. Early visits allow us to identify developmental issues, apply protective fluoride varnish, and — most importantly — build a positive, fear-free association with dental care from day one.", category: "General" },
-  { id: "f7",  question: "Which insurance plans do you accept?", answer: "We accept 20+ major insurance providers including Star Health, HDFC ERGO, Bajaj Allianz, ICICI Lombard, New India Assurance, United Health, and corporate dental plans. Our team will verify your benefits before treatment and assist with direct billing wherever possible. Call us or WhatsApp your card details and we will check coverage within an hour.", category: "Cost & Insurance" },
+
   { id: "f8",  question: "What is a smile makeover and how long does it take?", answer: "A smile makeover is a comprehensive, customised plan that may combine teeth whitening, porcelain veneers, crown and bridge work, gum contouring, and orthodontics to transform your smile. At PureSmile, we begin with Digital Smile Design (DSD) — you see your new smile on screen before any treatment starts. Most makeovers are completed in 3–8 visits over 4–12 weeks.", category: "Treatments" },
   { id: "f9",  question: "How long does professional teeth whitening last?", answer: "In-office Zoom whitening results typically last 1–3 years depending on diet (coffee, tea, red wine), smoking habits, and oral hygiene. We provide custom take-home trays and whitening gel with every in-office treatment — periodic 30-minute top-up sessions at home maintain your bright result indefinitely.", category: "Treatments" },
-  { id: "f11", question: "What should I do in a dental emergency?", answer: "Call us immediately on +91 98200 99999 — our emergency line is staffed 24/7. For a knocked-out adult tooth: rinse it gently (do not scrub), keep it moist in milk or the patient's own saliva, and see us within 30–60 minutes for the best chance of reimplantation. For toothache, broken crowns, or facial swelling, we have dedicated same-day emergency slots reserved every morning.", category: "Appointments" },
+  { id: "f11", question: "What should I do in a dental emergency?", answer: "Call us immediately on +91 94794 14237  — our emergency line is staffed 24/7. For a knocked-out adult tooth: rinse it gently (do not scrub), keep it moist in milk or the patient's own saliva, and see us within 30–60 minutes for the best chance of reimplantation. For toothache, broken crowns, or facial swelling, we have dedicated same-day emergency slots reserved every morning.", category: "Appointments" },
   { id: "f12", question: "How long does the full dental implant process take?", answer: "Implant placement is typically a 45–90 minute procedure under local anaesthesia. Osseointegration (bone healing and implant fusion) takes 8–16 weeks depending on bone density. Final crown delivery is a 1-hour appointment. Total timeline: 4–6 months for a standard single implant. Immediate loading (same-day temporary crown) is available for suitable cases.", category: "Treatments" },
-  { id: "f13", question: "Are porcelain veneers reversible?", answer: "Traditional veneers require 0.3–0.7 mm of enamel reduction and are therefore considered an irreversible procedure. However, ultra-thin (no-prep) Lumineers® require minimal to no enamel reduction. We always perform a Digital Smile Design preview and a wax-up mock-up — you can wear a temporary version over your natural teeth before committing to any permanent enamel preparation.", category: "Treatments" },
-  { id: "f14", question: "What is the difference between removable aligners and traditional braces?", answer: "Both systems move teeth effectively, but through different mechanisms. Removable aligners are convenient and discreet for many mild-to-moderate cases; fixed braces remain the recommended option for complex bite corrections or severe rotations. Your clinician will advise the best approach based on diagnostic records.", category: "Treatments" },
-  { id: "f15", question: "Do you offer sedation for anxious patients?", answer: "Absolutely. We offer nitrous oxide (laughing gas) for mild to moderate anxiety — safe, fast-acting, and you can drive home immediately afterwards. Oral sedation tablets are available for moderate-to-severe anxiety (requires a companion for travel). IV sedation is available through our visiting anaesthesiologist for major procedures or severe phobia cases. Please let us know when booking and we will arrange the most appropriate option.", category: "Appointments" },
+
+
+
   { id: "f16", question: "How can I prevent gum disease?", answer: "Gum disease prevention is straightforward: brush for 2 minutes twice daily using the Bass technique with a soft brush, floss or use interdental brushes once daily, use an alcohol-free fluoride mouthwash, avoid tobacco entirely, manage systemic conditions like diabetes, and attend a professional cleaning every 6 months. If caught early (gingivitis), gum disease is completely reversible.", category: "General" },
   { id: "f17", question: "What causes tooth sensitivity and how is it treated?", answer: "Common causes include enamel erosion (acid from diet or reflux), gum recession exposing root surfaces, cracked teeth, cavities, post-whitening sensitivity, and bruxism. Treatment depends on cause: desensitising pastes, fluoride varnish, bonding agent over exposed roots, gum grafts, a night guard for grinding, or treating the underlying cavity. Our diagnostics identify the specific cause before recommending treatment.", category: "Treatments" },
   { id: "f18", question: "How do I know if I need a root canal?", answer: "Classic signs include: severe spontaneous throbbing toothache, prolonged sensitivity to hot or cold after the stimulus is removed, pain on biting, tooth discolouration, a recurring pimple or sinus tract on the gum, or facial swelling. A periapical digital X-ray and pulp vitality testing give us a definitive diagnosis. Do not wait — an untreated infected tooth can spread and become a serious systemic health risk.", category: "Treatments" },
   
-  { id: "f20", question: "Is there parking available near the clinic?", answer: "Yes — there is a paid multi-level parking facility directly across from our building on Linking Road (open 24/7). On-street parking is available on the Bandra Hill Road side after 8 PM. We are also a 5-minute walk from Bandra (W) railway station and 10 minutes from the Bandra metro station, making public transport very convenient.", category: "General" },
+
 ];
 
 export const TREATMENT_OPTIONS = [

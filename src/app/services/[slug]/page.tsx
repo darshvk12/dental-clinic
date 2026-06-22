@@ -53,7 +53,7 @@ export default async function ServicePage({ params }: Props) {
                 {service.description}
               </p>
               <div className="flex flex-wrap gap-3">
-                <a href="#appointment" className="btn btn-mint btn-lg gap-2">
+                <a href="/#appointment" className="btn btn-mint btn-lg gap-2">
                   <Calendar size={18} /> Book This Treatment
                 </a>
                 <a href={`tel:${CLINIC_CONFIG.contact.phone}`} className="btn btn-ghost btn-lg gap-2" style={{ color: "white", borderColor: "rgba(255,255,255,0.2)" }}>
@@ -138,7 +138,7 @@ export default async function ServicePage({ params }: Props) {
                   <p className="text-white/55 text-xs leading-relaxed mb-4">
                     Book a consultation to discuss your {service.name.toLowerCase()} treatment plan.
                   </p>
-                  <a href="#appointment" className="btn btn-mint btn-md w-full justify-center gap-2">
+                  <a href="/#appointment" className="btn btn-mint btn-md w-full justify-center gap-2">
                     <Calendar size={15} /> Book Consultation
                   </a>
                   <a href={`tel:${CLINIC_CONFIG.contact.phone}`} className="mt-2 flex items-center justify-center gap-2 text-white/50 hover:text-white text-xs font-medium transition-colors">

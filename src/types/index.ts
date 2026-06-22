@@ -70,6 +70,7 @@ export interface Service {
   shortDesc: string;
   description: string;
   benefits: string[];
+  image?: string;
   duration?: string;
   priceRange?: string;
   isEmergency?: boolean;

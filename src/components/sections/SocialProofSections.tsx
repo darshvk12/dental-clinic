@@ -157,11 +157,12 @@ function FAQItem({ item, index }: { item: typeof FAQS[0]; index: number }) {
   return (
     <motion.div
       ref={ref}
+      layout
       initial={{ opacity: 0, y: 16 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ delay: (index % 2) * 0.06, duration: 0.5 }}
+      transition={{ delay: (index % 2) * 0.06, duration: 0.5, layout: { duration: 0.25, ease: [0.16, 1, 0.3, 1] } }}
       className={cn(
-        "border rounded-2xl overflow-hidden transition-all duration-200",
+        "self-start border rounded-2xl overflow-hidden transition-all duration-200",
         open ? "border-dental-navy-200 shadow-[0_0_0_3px_rgba(15,45,94,0.06)]" : "border-dental-slate-100 bg-white"
       )}
     >
@@ -238,7 +239,7 @@ export function FAQSection() {
           </RevealDiv>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-3">
+        <div className="grid lg:grid-cols-2 gap-3 items-start">
           <AnimatePresence mode="wait">
             {filtered.map((item, i) => (
               <FAQItem key={item.id} item={item} index={i} />
@@ -271,14 +272,16 @@ function BlogCard({ post, index }: { post: BlogPost; index: number }) {
       className="card-base overflow-hidden group"
     >
       {/* Thumbnail */}
-      <div className={`h-44 bg-gradient-to-br ${post.bgClass} flex items-center justify-center text-5xl relative overflow-hidden`}>
+      <div className="relative h-44 overflow-hidden">
         {post.coverImage ? (
           <img
             src={post.coverImage}
             alt={post.title}
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 min-h-full min-w-full object-cover"
           />
-        ) : null}
+        ) : (
+          <div className={`absolute inset-0 bg-gradient-to-br ${post.bgClass}`} />
+        )}
         <div className="absolute inset-0 bg-gradient-to-br from-black/0 to-black/10"></div>
         <div className="absolute bottom-3 left-3 z-10">
           <span className="text-[0.65rem] font-bold uppercase tracking-wider bg-white/90 text-dental-navy-700 px-2.5 py-1 rounded-full shadow-sm">

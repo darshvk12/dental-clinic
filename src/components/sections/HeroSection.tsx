@@ -64,15 +64,15 @@ export default function HeroSection() {
             </motion.p>
 
             {/* CTA Buttons */}
-            <motion.div {...fadeUp(0.3)} className="flex flex-wrap gap-3 mb-8">
-              <a href="#appointment" className="btn btn-primary btn-lg gap-2 shadow-dental">
+            <motion.div {...fadeUp(0.3)} className="flex flex-col sm:flex-row items-start gap-3 mb-8">
+              <a href="#appointment" className="btn btn-primary btn-lg gap-2 w-auto">
                 <Calendar size={18} strokeWidth={2} />
                 Book Appointment
                 <ArrowRight size={16} className="opacity-70" />
               </a>
               <a
                 href="#contact"
-                className="btn btn-emergency btn-lg gap-2"
+                className="btn btn-emergency btn-lg gap-2 w-auto"
                 aria-label="Emergency information"
               >
                 <Phone size={18} strokeWidth={2} />
@@ -94,12 +94,6 @@ export default function HeroSection() {
                   <span className="text-xs text-dental-slate-400"> · 1,247 Google Reviews</span>
                 </div>
               </div>
-              <div className="w-px h-5 bg-dental-slate-200" />
-              <div className="flex items-center gap-1.5 text-sm text-dental-slate-500">
-                <ShieldCheck size={15} className="text-dental-mint" />
-                <span><strong className="text-dental-slate-700">NABH</strong> Accredited</span>
-              </div>
-              <div className="w-px h-5 bg-dental-slate-200" />
               <div className="text-sm text-dental-slate-500">
                 <strong className="text-dental-slate-700">{CLINIC_CONFIG.doctor.experience}+ Years</strong> of Excellence
               </div>
