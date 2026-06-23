@@ -51,9 +51,9 @@ export default function HeroSection() {
 
 
       <div className="container-dental relative z-10 pt-32 pb-20 min-h-[calc(100vh-80px)]">
-        <div className="grid grid-cols-1 gap-8 xl:gap-16 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 xl:gap-16 items-center">
           {/* ── Left content ── */}
-          <motion.div className="relative z-20 space-y-8">
+          <motion.div className="order-1 md:order-none relative z-20 space-y-8">
             {/* Badge */}
             <motion.div {...fadeUp(0)}>
               <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full backdrop-blur-xl bg-white/50 border border-white/30 shadow-lg">
@@ -125,7 +125,7 @@ export default function HeroSection() {
           </motion.div>
 
           {/* ── Right visual (Premium image emergence) ── */}
-          <div className="relative flex items-center justify-center w-full h-[420px] sm:h-[480px] md:h-[520px] lg:h-[600px]">
+          <div className="order-2 md:order-none relative flex items-center justify-center w-full h-[420px] sm:h-[480px] md:h-[520px] lg:h-[600px]">
             {/* Ambient light orbs */}
             <div className="absolute inset-0 pointer-events-none">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full rounded-3xl bg-gradient-to-t from-blue-500/0 via-blue-400/5 to-blue-300/0 blur-2xl" />
