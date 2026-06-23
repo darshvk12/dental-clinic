@@ -50,7 +50,7 @@ export default function HeroSection() {
 
 
 
-      <div className="container-dental relative z-10 pt-24 pb-16 md:pt-28 md:pb-18 xl:pt-32 xl:pb-20 min-h-[calc(100vh-80px)]">
+      <div className="container-dental relative z-10 pt-32 pb-20 min-h-[calc(100vh-80px)]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-16 items-center">
           {/* ── Left content ── */}
           <motion.div className="relative z-20 space-y-8">
@@ -125,7 +125,7 @@ export default function HeroSection() {
           </motion.div>
 
           {/* ── Right visual (Premium image emergence) ── */}
-          <div className="relative flex items-center justify-center w-full h-[320px] sm:h-[420px] md:h-[520px] lg:h-[600px]">
+          <div className="relative hidden lg:flex items-center justify-center w-full h-[600px]">
             {/* Ambient light orbs */}
             <div className="absolute inset-0 pointer-events-none">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full rounded-3xl bg-gradient-to-t from-blue-500/0 via-blue-400/5 to-blue-300/0 blur-2xl" />
