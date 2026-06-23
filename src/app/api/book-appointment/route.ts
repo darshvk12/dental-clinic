@@ -55,15 +55,15 @@ export async function POST(request: Request) {
       },
       { status: 200 }
     );
-  } catch (error) {
-    console.error("Appointment email error:", error);
+  } 
+catch (error: any) {
+  console.error("Appointment email error:", error);
 
-    return NextResponse.json(
-      {
-        error:
-          "Unable to send appointment confirmation at this time. Please try again later.",
-      },
-      { status: 500 }
-    );
-  }
+  return NextResponse.json(
+    {
+      error: error?.message || "Unknown error",
+      details: String(error),
+    },
+    { status: 500 }
+  );
 }
