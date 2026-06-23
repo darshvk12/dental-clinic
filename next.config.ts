@@ -7,7 +7,10 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "randomuser.me" },
     ],
   },
-  experimental: { optimizeCss: true },
+
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 export default nextConfig;

@@ -15,18 +15,11 @@ const appointmentSchema = z.object({
 type AppointmentPayload = z.infer<typeof appointmentSchema>;
 
 export async function POST(request: Request) {
-  if (request.method !== "POST") {
-    return NextResponse.json(
-      { error: "Method not allowed." }, 
-      { status: 405 }
-    );
-  }
-
   let payload: unknown;
 
   try {
     payload = await request.json();
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: "Invalid JSON payload." },
       { status: 400 }
@@ -37,7 +30,10 @@ export async function POST(request: Request) {
 
   if (!parseResult.success) {
     return NextResponse.json(
-      { error: "Invalid appointment data.", details: parseResult.error.flatten() },
+      {
+        error: "Invalid appointment data.",
+        details: parseResult.error.flatten(),
+      },
       { status: 400 }
     );
   }
@@ -51,17 +47,17 @@ export async function POST(request: Request) {
       {
         success: true,
         message:
-          "Thank you. Your appointment request has been received. Our team will contact you within 30 minutes during clinic hours. A confirmation email has been sent to your inbox.",
+          "Thank you. Your appointment request has been received. Our team will contact you shortly.",
       },
       { status: 200 }
     );
-  } catch (error) {
+  } catch (error: any) {
     console.error("Appointment email error:", error);
 
     return NextResponse.json(
       {
-        error:
-          "Unable to send appointment confirmation at this time. Please try again later.",
+        error: error?.message || "Unknown error",
+        details: String(error),
       },
       { status: 500 }
     );
