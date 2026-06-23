@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "@/hooks";
-import { TRUST_BADGES, CLINIC_CONFIG, SERVICES, BEFORE_AFTER } from "@/lib/data";
+import { CLINIC_CONFIG, SERVICES, BEFORE_AFTER } from "@/lib/data";
 import { ArrowRight, GraduationCap, Globe2, Award, CheckCircle2 } from "lucide-react";
 import type { Service, BeforeAfterCase } from "@/types";
 
@@ -29,33 +29,7 @@ function RevealDiv({ children, delay = 0, className = "" }: {
   );
 }
 
-/* ══════════════════════════════════════════════════════════════ */
-/* TRUST BAR                                                      */
-/* ══════════════════════════════════════════════════════════════ */
-export function TrustBar() {
-  return (
-    <section className="bg-dental-navy-700 py-4" aria-label="Certifications and trust">
-      <div className="container-dental">
-        <div className="flex flex-wrap items-center justify-center sm:justify-between gap-x-6 gap-y-3">
-          {TRUST_BADGES.map((badge, i) => (
-            <motion.div
-              key={badge.id}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.07, duration: 0.4 }}
-              className="flex items-center gap-2.5"
-            >
-              <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-base flex-shrink-0">
-                {badge.icon}
-              </div>
-              <span className="text-white/85 text-xs font-semibold whitespace-nowrap">{badge.label}</span>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+/* TrustBar removed per design request */
 
 /* ══════════════════════════════════════════════════════════════ */
 /* ABOUT SECTION                                                  */

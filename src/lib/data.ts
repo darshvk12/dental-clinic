@@ -73,10 +73,10 @@ export const STATS: StatCard[] = [
 
 // ─── TRUST BADGES ───────────────────────────────────────────────
 export const TRUST_BADGES: TrustBadge[] = [
-  { id: "ida",    icon: "", label: "Indian Endodontist Member " },
-  { id: "award",  icon: "", label: "Best Dental Clinic 2024" },
-  { id: "aacd",   icon: "", label: "AACD Accredited" },
-  { id: "icoi",   icon: "", label: "ICOI Fellow" },
+  { id: "technology",   icon: "💎", label: "Advanced Technology" },
+  { id: "hygiene",      icon: "🛡️", label: "Safe & Hygienic" },
+  { id: "expertise",    icon: "👥", label: "Expert Care" },
+  { id: "patient",      icon: "❤️", label: "Patient First" },
 ];
 
 // ─── SERVICES ──────────────────────────────────────────────────
@@ -202,15 +202,16 @@ export const BEFORE_AFTER: BeforeAfterCase[] = [
   { id: "whitening-1",title: "Zoom Whitening",       treatment: "In-office + Custom Take-home Trays", duration: "1 session · 90 min", beforeEmoji: "🙁", afterEmoji: "😄" , beforeImage: "/images/before-after/teethwhitebefore.jpg", afterImage: "/images/before-after/teethwhiteafter.jpg" },
   { id: "veneer-1",   title: "E.max Veneers",         treatment: "6 Upper Anterior Veneers", duration: "2 visits · 2 weeks", beforeEmoji: "😑", afterEmoji: "🤩" , beforeImage: "/images/before-after/emaxveneersbefore.png", afterImage: "/images/before-after/emaxveneersafter.png" },
   { id: "crown-1",    title: "Crown Restoration", treatment: "4 Posterior Zirconia Crowns", duration: "1 visit · 2 hours", beforeEmoji: "😫", afterEmoji: "😌" , beforeImage: "/images/before-after/crownrestorationbefore.png", afterImage: "/images/before-after/crownrestorationafter.png" },
+  { id: "invisalign-1", title: "Invisalign Clear Aligners", treatment: "Custom clear aligner therapy", duration: "4–6 months · 14 visits", beforeEmoji: "😬", afterEmoji: "😍", beforeImage: "/images/before-after/invisalignbefore.jpg", afterImage: "/images/before-after/invisalignafter.jpg" },
 ];
 
 // ─── WHY CHOOSE ─────────────────────────────────────────────────
 export const WHY_CHOOSE: WhyChooseItem[] = [
   { id: "tech",      number: "01", icon: "", title: "Advanced Technology",    description: "3D CBCT imaging, Airflow EMS ultrasonic hygiene, microscopes and modern restorative workflows to deliver predictable care." },
   { id: "painless",  number: "02", icon: "", title: "Pain-Free Guarantee",    description: "STA Wand computer-controlled anaesthesia, nitrous oxide sedation, and a gentle team. We promise comfort — or we make it right." },
-  { id: "team",      number: "03", icon: "", title: "Multi-Specialty Team", description: "Implantologist, prosthodontist and endodontist — collaborative, evidence-based care under one roof." },
-  { id: "pricing",   number: "04", icon: "", title: "Transparent Pricing",   description: "Detailed itemised estimates before we begin. No hidden fees, no upselling. Third-party financing available at 0% EMI." },
-  { id: "schedule",  number: "05", icon: "", title: "Flexible Scheduling",   description: "Book online 24/7. Early mornings from 10:00 AM, evenings until 8 PM, and emergency slots always reserved." },
+  { id: "team",      number: "03", icon: "", title: "Multi-Specialty Team",    description: "Implantologist, prosthodontist and endodontist — collaborative, evidence-based care under one roof." },
+  { id: "pricing",   number: "04", icon: "", title: "Transparent Pricing",    description: "Detailed itemised estimates before we begin. No hidden fees, no upselling. Third-party financing available at 0% EMI." },
+  { id: "schedule",  number: "05", icon: "", title: "Flexible Scheduling",    description: "Book online 24/7. Early mornings from 10:00 AM, evenings until 8 PM, and emergency slots always reserved." },
   { id: "sterilisation", number: "06", icon: "", title: "Hospital-Grade Sterilisation", description: "Class B autoclave, single-use disposables, and real-time sterilisation monitoring. NABH-compliant infection control protocols." },
 ];
 
@@ -477,23 +478,21 @@ export const FAQS: FAQItem[] = [
   { id: "f16", question: "How can I prevent gum disease?", answer: "Gum disease prevention is straightforward: brush for 2 minutes twice daily using the Bass technique with a soft brush, floss or use interdental brushes once daily, use an alcohol-free fluoride mouthwash, avoid tobacco entirely, manage systemic conditions like diabetes, and attend a professional cleaning every 6 months. If caught early (gingivitis), gum disease is completely reversible.", category: "General" },
   { id: "f17", question: "What causes tooth sensitivity and how is it treated?", answer: "Common causes include enamel erosion (acid from diet or reflux), gum recession exposing root surfaces, cracked teeth, cavities, post-whitening sensitivity, and bruxism. Treatment depends on cause: desensitising pastes, fluoride varnish, bonding agent over exposed roots, gum grafts, a night guard for grinding, or treating the underlying cavity. Our diagnostics identify the specific cause before recommending treatment.", category: "Treatments" },
   { id: "f18", question: "How do I know if I need a root canal?", answer: "Classic signs include: severe spontaneous throbbing toothache, prolonged sensitivity to hot or cold after the stimulus is removed, pain on biting, tooth discolouration, a recurring pimple or sinus tract on the gum, or facial swelling. A periapical digital X-ray and pulp vitality testing give us a definitive diagnosis. Do not wait — an untreated infected tooth can spread and become a serious systemic health risk.", category: "Treatments" },
+  { id: "f19", question: "How often should I get my teeth professionally cleaned?", answer: "Most dentists recommend a professional dental cleaning every 6 months. However, patients with gum disease, braces, implants, or other oral health concerns may benefit from more frequent cleanings as advised by their dentist.", category: "General" },
   
 
 ];
 
 export const TREATMENT_OPTIONS = [
   "Root Canal Treatment",
-  "Re-Root Canal Treatment",
-  "Dental Trauma & Tooth Restoration",
-  "Teeth Whitening",
-  "Smile Makeover",
-  "Gap Closure (Diastema Closure)",
-  "Tooth-Colored Fillings & Cosmetic Bonding",
-  "Crowns & Bridges",
-  "Inlays, Onlays & Biomimetic Restorations",
   "Dental Implants",
-  "Full Mouth Rehabilitation",
+  "Smile Makeover",
+  "Crowns & Bridges",
+  "Tooth-Colored Fillings",
   "Gum Treatment & Deep Cleaning",
+  "Full Mouth Rehabilitation",
+  "Dentures & Tooth Replacement",
+  "General Dentistry",
 ];
 
 export const TIME_SLOTS = [

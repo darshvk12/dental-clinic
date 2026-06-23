@@ -26,7 +26,7 @@ export default function ModelViewer({ src = "/models/teeth.glb" }: { src?: strin
     let running = true;
     let raf = 0;
     let last = performance.now();
-    let currentOrbit = "0deg 75deg 2.5m";
+    let currentOrbit = "0deg 75deg 3.5m";
     // degrees per second (higher = faster rotation)
     const speedDegPerSec = 60;
 
@@ -67,12 +67,7 @@ export default function ModelViewer({ src = "/models/teeth.glb" }: { src?: strin
           azDeg = (azDeg + speedDegPerSec * delta) % 360;
           currentOrbit = `${azDeg}deg ${rest}`;
 
-          if (typeof el.cameraOrbit !== "undefined") {
-            el.cameraOrbit = currentOrbit;
-          } else {
-            el.setAttribute("camera-orbit", currentOrbit);
-          }
-
+          el.setAttribute("camera-orbit", currentOrbit);
           if (typeof el.jumpCameraToGoal === "function") el.jumpCameraToGoal();
         } catch {
           // ignore
@@ -108,27 +103,73 @@ export default function ModelViewer({ src = "/models/teeth.glb" }: { src?: strin
   }, []);
 
   return (
-    <div className="flex items-center justify-center w-[280px] h-[280px]">
-      <model-viewer
-        ref={ref}
-        src={src}
-        alt="3D teeth model"
-        camera-controls
-        auto-rotate
-        camera-orbit="0deg 75deg 1m"
-        exposure="2"
-        shadow-intensity="0.3"
-        environment-image="neutral"
-        style={{ 
-          width: '100%', 
-          height: '100%', 
-          touchAction: 'none', 
-          backgroundColor: '#FFFFFF',
-          margin: '0',
-          display: 'block',
-          borderRadius: '8px'
-        }}
-      />
-    </div>
+    <>
+      <style>{`
+        @keyframes sparkle {
+          0%, 100% { opacity: 0; }
+          50% { opacity: 1; }
+        }
+        
+        @keyframes glow {
+          0%, 100% { 
+            filter: drop-shadow(0 0 0px rgba(59, 130, 246, 0));
+          }
+          50% { 
+            filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.6)) drop-shadow(0 0 40px rgba(59, 130, 246, 0.3));
+          }
+        }
+        
+        .model-viewer-wrapper {
+          animation: glow 2s ease-in-out infinite;
+        }
+        
+        .sparkle {
+          position: absolute;
+          width: 3px;
+          height: 3px;
+          background: radial-gradient(circle, rgba(59, 130, 246, 0.8), rgba(147, 197, 253, 0.4));
+          border-radius: 50%;
+          pointer-events: none;
+        }
+        
+        .sparkle-1 { top: 10%; left: 15%; animation: sparkle 1.5s ease-in-out infinite; }
+        .sparkle-2 { top: 20%; right: 10%; animation: sparkle 1.5s ease-in-out infinite 0.3s; }
+        .sparkle-3 { bottom: 15%; left: 20%; animation: sparkle 1.5s ease-in-out infinite 0.6s; }
+        .sparkle-4 { bottom: 10%; right: 15%; animation: sparkle 1.5s ease-in-out infinite 0.9s; }
+        .sparkle-5 { top: 50%; right: 5%; animation: sparkle 1.5s ease-in-out infinite 1.2s; }
+      `}</style>
+      <div className="model-viewer-wrapper relative w-full h-[180px] lg:h-[220px] flex items-center justify-center">
+        {/* Sparkles */}
+        <div className="sparkle sparkle-1" />
+        <div className="sparkle sparkle-2" />
+        <div className="sparkle sparkle-3" />
+        <div className="sparkle sparkle-4" />
+        <div className="sparkle sparkle-5" />
+        
+        <model-viewer
+          ref={ref}
+          src={src}
+          alt="3D teeth model"
+          camera-controls
+          reveal="auto"
+          shadow-intensity="1"
+          shadow-softness="1"
+          exposure="2"
+          environment-image="neutral"
+          camera-orbit="0deg 80deg 4.5m"
+          field-of-view="50deg"
+          style={{ 
+            width: '100%', 
+            height: '100%', 
+            touchAction: 'none', 
+            backgroundColor: 'transparent',
+            margin: '0',
+            padding: '0',
+            display: 'block',
+            transition: 'all 0.3s ease',
+          }}
+        />
+      </div>
+    </>
   );
 }

@@ -201,7 +201,7 @@ function FAQItem({ item, index }: { item: typeof FAQS[0]; index: number }) {
 
 export function FAQSection() {
   const [activeCategory, setActiveCategory] = useState<string>("All");
-  const categories = ["All", "General", "Treatments", "Cost & Insurance", "Technology", "Appointments"];
+  const categories = ["All", "General", "Treatments", "Cost & Insurance", "Appointments"];
   const filtered = activeCategory === "All" ? FAQS : FAQS.filter(f => f.category === activeCategory);
 
   return (

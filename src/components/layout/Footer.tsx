@@ -5,12 +5,12 @@ import { Phone, Mail, MapPin, Instagram, Facebook, Youtube, Linkedin } from "luc
 const FOOTER_LINKS = {
   services: SERVICES.slice(0, 7).map(s => ({ label: s.name, href: s.href })),
   clinic: [
-    { label: "About Dr. Pooja Bala",    href: "/services/root-canal#about" },
-    { label: "Smile Gallery",           href: "/services/root-canal#gallery" },
-    { label: "Patient Reviews",         href: "/services/root-canal#testimonials" },
-    { label: "FAQ",                     href: "/services/root-canal#faq" },
-    { label: "Blog & Tips",             href: "/services/root-canal#blog" },
-    { label: "Book Appointment",        href: "/services/root-canal#appointment" },
+    { label: "About Dr. Pooja Bala",    href: "/about" },
+    { label: "Smile Gallery",           href: "/#gallery" },
+    { label: "Patient Reviews",         href: "/#testimonials" },
+    { label: "FAQ",                     href: "/#faq" },
+    { label: "Blog & Tips",             href: "/blog" },
+    { label: "Book Appointment",        href: "/#appointment" },
   ],
   legal: [
     { label: "Privacy Policy",     href: "/privacy" },

@@ -4,7 +4,7 @@ import Footer from "@/components/layout/Footer";
 import StickyUI from "@/components/ui/StickyUI";
 
 import HeroSection from "@/components/sections/HeroSection";
-import { TrustBar, AboutSection, ServicesSection, BeforeAfterSection } from "@/components/sections/ContentSections";
+import { AboutSection, ServicesSection, BeforeAfterSection } from "@/components/sections/ContentSections";
 import { WhyChooseSection, JourneySection } from "@/components/sections/FeatureSections";
 import { TestimonialsSection, FAQSection, BlogSection } from "@/components/sections/SocialProofSections";
 import AppointmentSection from "@/components/sections/AppointmentSection";
@@ -25,10 +25,7 @@ export default function HomePage() {
         {/* 1. Hero */}
         <HeroSection />
 
-        {/* 2. Trust Bar */}
-        <TrustBar />
-
-        {/* 3. About Doctor */}
+        {/* 2. About Doctor (Trust bar removed) */}
         <AboutSection />
 
         {/* 4. Services */}
