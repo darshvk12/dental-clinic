@@ -8,10 +8,6 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  experimental: {
-    optimizeCss: true,
-  },
-
   eslint: {
     ignoreDuringBuilds: true,
   },
