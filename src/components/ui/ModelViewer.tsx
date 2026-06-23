@@ -1,15 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
 
-// Allow TSX to accept the <model-viewer> element
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      "model-viewer": any;
-    }
-  }
-}
-
 export default function ModelViewer({ src = "/models/teeth.glb" }: { src?: string }) {
   const ref = useRef<any>(null);
 
